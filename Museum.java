@@ -21,6 +21,8 @@ public class Museum {
     public String toString() {
         return this.name + " is a " + this.nFloors + " story building.";
     }
+
+    //check location
     public static void main(String[] args) {
         Museum fordHall = new Museum("Ford Hall", 4);
         System.out.println(fordHall);
