@@ -1,8 +1,6 @@
-public class Character {
-    public class Charcter{
+public class User {
         public String name;
         public String whereAreYou;
-    }
 
     public void fight(){
         if(/*something in your hand */){
