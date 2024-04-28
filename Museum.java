@@ -1,25 +1,25 @@
 public class Museum {
 
     private String name;
-    private int nFloors;
+    private int nRooms;
     
-    public Museum(String name, int nFloors) {
+    public Museum(String name, int nRooms) {
         if (name != null) { this.name = name; } 
-        if (nFloors < 1){
+        if (nRooms < 1){
             throw new RuntimeException("Cannot construct a building with fewer than 1 floor.");
         }
-        this.nFloors = nFloors;
+        this.nRooms = nRooms;
     }
     public String getName() {
         return this.name;
     }
 
     public int getFloors() {
-        return this.nFloors;
+        return this.nRooms;
     }
 
     public String toString() {
-        return this.name + " is a " + this.nFloors + " story building.";
+        return this.name + " is a " + this.nRooms + " story building.";
     }
 
     //check location
