@@ -13,17 +13,19 @@ public class User {
     public void go(String inputString) {
         for(inputString) //i dont really know
             if(inputString.contains("go")){
+                int x = 0;
+                int y = 0;
                 if(inputString.contains("forward")){
-                Main.coordChecker(0, 1, "forward");
+                ;
                 }
                 if(inputString.contains("backward")){
-                    Main.coordChecker(0, 1, "backward");
+                ;
                 }
                 if(inputString.contains("left")){
-                    Main.coordChecker(1, 0, "left");
+                ;
                 }
                 if(inputString.contains("right")){
-                    Main.coordChecker(1, 0, "right");
+                ;
                 }
             }
 

@@ -7,9 +7,6 @@ private int x;
 private int y;
 private String place;
 
-
-
-public Map(int x, int y, String[][] map){
   
       
 }
