@@ -10,7 +10,22 @@ public class User {
     ArrayList<String> inventory = new ArrayList<String>();
 
 /* will hold off until map is ready*/
-    public void go(forward, backwards, left, right) {
+    public void go(String inputString) {
+        for(inputString) //i dont really know
+            if(inputString.contains("go")){
+                if(inputString.contains("forward")){
+                Main.coordChecker(0, 1, "forward");
+                }
+                if(inputString.contains("backward")){
+                    Main.coordChecker(0, 1, "backward");
+                }
+                if(inputString.contains("left")){
+                    Main.coordChecker(1, 0, "left");
+                }
+                if(inputString.contains("right")){
+                    Main.coordChecker(1, 0, "right");
+                }
+            }
 
     }
 
