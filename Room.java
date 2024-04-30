@@ -12,8 +12,6 @@ public class Room extends Museum{
         this.matrix = null;
         
     }
-
-    
     public static String roomBlocked(boolean isBlocked){
        return "Sorry, this space is blocked, try moving somewhere else!";
     }

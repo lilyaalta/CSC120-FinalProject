@@ -1,3 +1,70 @@
+java.util.Random
+java.until.ArrayList
 public Class Character {
-    // creatures include painting, knight
+    /*
+     * things that characters can do, such as the knight, painting, etc
+     */
+    private int characterLocation;
+    ArrayList<String> numberList = new ArrayList<String>();
+
+    /*
+     * the character can fight the user under certain circumstances
+     * sword, rope, hammer, armor... change so that it is just knight and portait
+     */
+    public void fightUser () {
+        if (//user is at the right place where the character is) {
+            System.out.println("would you like to fight?", //character);
+            if (// if user decided to fight) {
+                System.out.println("");
+                if (chanceOfSurvival() == true){
+                    //character dies, drops a treasure
+                    super.inventory.add(//object)
+                }
+                //return to begining of game, you lost the fight
+            }
+            // if user does not decide to fight back
+        }
+    }
+
+
+    private void knight () {
+
+    }
+    /*
+     * the chance of survival based off a non-changing number input
+     * @param number, the set number that helps determine chances
+     * @return a boolean t/f that shows survival of the user
+     */
+    private boolean chanceOfSurvival (int number) {
+        // if input number 3
+        int randomNumber = rand.nextInt(10)
+        if (number == 3) {
+            if (randomNumber <= 9) {
+                return true;
+            }
+            return false;
+        }
+        // if input number 2
+        if (number == 2) {
+            if (randomNumber <= 6) {
+                return true;
+            }
+            return false;
+        }
+        // if inout number 1
+        if (number == 1) {
+            if (randomNumber <= 4) {
+                return true;
+            }
+            return false;
+        }
+        // if input number 0, always a win
+        if (number == 0) {
+            if (randomNumber <= 1) {
+                return true;
+            }
+            return false;
+        }
+        System.out.println("need to input valid number");
+    }
 }
