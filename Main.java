@@ -83,7 +83,7 @@ public class Main {
         if(String[][].equals("Door") == true){
             Room.roomDoor(true);
         }      
-        if(String[][].equals("Charcter") == true){
+        if(String[][].equals("Character") == true){
                 //vharcter class
         }
         else{

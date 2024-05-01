@@ -45,8 +45,4 @@ public class User {
     public void inventory() {
         System.out.println("You currently have"+ inventory +"in your inventory");
     }
-
-/* user can fight any creatures */
-    public void fight() {
-
 }
