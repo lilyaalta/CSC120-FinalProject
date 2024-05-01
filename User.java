@@ -8,34 +8,26 @@ public class User {
     public String userName;
     public String whereAreYou;
     ArrayList<String> inventory = new ArrayList<String>();
-
-/* will hold off until map is ready*/
-    public void go(String inputString) {
-        for(inputString) //i dont really know
-            if(inputString.contains("go")){
-                int x = 0;
-                int y = 0;
-                if(inputString.contains("forward")){
-                ;
-                }
-                if(inputString.contains("backward")){
-                ;
-                }
-                if(inputString.contains("left")){
-                ;
-                }
-                if(inputString.contains("right")){
-                ;
-                }
-            }
-
-    }
+    ArrayList<String> sachel = new ArrayList<String>();
 
     public void take() {
         if (//object is there to take//) {
             if (//inventory.size() == 0)//) {
                 inventory.add(//object);
                 //object must be deleted from coordinates//
+            }
+            System.out.println("You already have an object in your inventory... you can only have one!");
+        }
+        System.out.println("There is currently nothing to take!");
+    }
+
+    public void steal() {
+        if (//object is there to take//) {
+            if (//object is not already in the list) {
+                if (//object is smth to be stolen) {
+                    sachel.add(//object);
+                }
+                System.out.println("You can't steal this object, try taking it!");
             }
             System.out.println("You already have an object in your inventory... you can only have one!");
         }

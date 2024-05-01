@@ -1,21 +1,11 @@
 java.util.Random
 java.until.ArrayList
 public Class Character {
-    /*
-     * things that characters can do, such as the knight, painting, etc
-     */
+    
     private int characterLocation;
     ArrayList<String> numberList = new ArrayList<String>();
 
-    /*
-     * the character can fight the user under certain circumstances
-     * sword, rope, hammer, armor... change so that it is just knight and portait
-     */
     public void fightUser () {
-        if (//user is at the right place where the character is) {
-            System.out.println("would you like to fight?", //character);
-            if (// if user decided to fight) {
-                System.out.println("");
                 if (chanceOfSurvival() == true){
                     //character dies, drops a treasure
                     super.inventory.add(//object)
@@ -26,8 +16,48 @@ public Class Character {
         }
     }
 
-
+    // when a character is at the spot where the knight is
     private void knight () {
+        System.out.println("You have bumped into a knight in shining armor!");
+        System.out.println("You notice that it seems to be moving on its own a little... but you go to steal its helmet....");
+        System.out.println("When it grabs your arm! Do you A) talk to it or B) fight?");
+        if (scanner ans == a){
+            //you talk to it.. 50% chance it yells for the gaurd... if it does, 10% chance you are arrested on the spot
+            //if it does yell, you have a 25% chance to hide and succeed, 75% chance to escape and start over, and 10% chance the gaurd doesn't hear you
+        }
+        if (scanner ans == b) {
+            // check inventory
+            if (inventory.contains("Hammer")) {
+                if(chanceOfSurvival(2) == true) {
+                    System.out.println("With your hammer, you had a haigher than half chance of winning");
+                    System.out.println("You decide to valiantly battle this knight, hitting this thin sheet of human-shaped metal right where it hurts...");
+                    System.out.println("And you win! Congrats. You can go about your theivery, but don't forget to add your new trophy to your sachel!");
+                    //super.steal.object
+                }
+                // if it is false, die
+                System.out.println("you decided to fight without any weapons...?");
+            }
+            if (inventory.contains("Rope")) {
+                if(chanceOfSurvival(0) == true) {
+                    System.out.println("");
+                }
+                System.out.println("you decided to fight without any weapons...?");
+            }
+            if (inventory.contains("Sword")) {
+                if(chanceOfSurvival(3) == true) {
+                    System.out.println("");
+                }
+                System.out.println("you decided to fight without any weapons...?");
+            }
+            if (inventory.contains("Armor")) {
+                if(chanceOfSurvival(1) == true) {
+                    System.out.println("");
+                }
+                System.out.println("you decided to fight without any weapons...?");
+            }
+            //else you try to fistfight
+        }
+
 
     }
     /*
@@ -46,19 +76,19 @@ public Class Character {
         }
         // if input number 2
         if (number == 2) {
-            if (randomNumber <= 6) {
+            if (randomNumber <= 7) {
                 return true;
             }
             return false;
         }
         // if inout number 1
         if (number == 1) {
-            if (randomNumber <= 4) {
+            if (randomNumber <= 5) {
                 return true;
             }
             return false;
         }
-        // if input number 0, always a win
+        // if input number 0 very low chance
         if (number == 0) {
             if (randomNumber <= 1) {
                 return true;
