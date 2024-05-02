@@ -4,9 +4,6 @@ public class Main {
     //initializing objects
     // strings which are sword, rope, hammer, armor
     // strings key, scroll. 
-    
-    
-
     public static void main(String[] args) {
          // where should these go
 

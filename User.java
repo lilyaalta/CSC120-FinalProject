@@ -18,7 +18,7 @@ public class User {
 
     public static void take(String object) {
         //if you are at the right location
-        if(Map.midievalRoom.contains(Map.midievalRoom[1][2])){
+        if(Map.trackCoords()){
             // if spot contains the object
             if (object == "Sword" | object == "Rope" | object == "Armor" | object == "Hammer" ) {
                 // if your inventory is empty

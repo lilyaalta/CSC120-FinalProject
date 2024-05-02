@@ -76,9 +76,11 @@ public class Map {
             }
 
 
-    }
+    }     
+}
 
-    public static void checkRoom(String coordinates){
+
+    public static void checkRoom(String coordinates) {
         switch (coordinates) {
             case "Blocked":
             System.out.println("Sorry, this space is blocked, try moving somewhere else!");
