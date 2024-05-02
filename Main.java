@@ -7,10 +7,10 @@ public class Main {
     public static void main(String[] args) {
          // where should these go
 
-        String[][] midievalRoom = {
+     String[][] midievalRoom = {
             {"Door", "Blocked", "Blocked", "Blocked"},
             {"Empty", "Empty", "Object", "Blocked"},
-            {"Trap", "Empty", "Empty", "Blocked"},
+            {"Empty", "Empty", "Empty", "Blocked"},
             {"Blocked", "Knight", "Empty", "Door"}
          };
      //  String[][] jewelryRoom = {
@@ -56,9 +56,9 @@ public class Main {
                 System.out.println("Exiting game. Goodbye!");
                 break; // Exit the loop and end the game
             }
-            else{
-                System.out.println("invalid input. PLease use a action along with direction or object ");
-            }
+            // else if{
+            //     System.out.println("invalid input. PLease use a action along with direction or object ");
+            // }
         }
         gameScanner.close();
   }
