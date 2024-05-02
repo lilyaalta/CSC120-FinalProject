@@ -7,8 +7,7 @@ public class Main {
     
 
     public static void main(String[] args) {
-        int playerPosx = 0;
-        int playerPosy = 0; // where should these go
+         // where should these go
 
         String[][] midievalRoom = {
             {"Door", "Blocked", "Blocked", "Blocked"},
@@ -22,7 +21,7 @@ public class Main {
 
         while(true) {
             String inputString = gameScanner.nextLine().toLowerCase();
-            if(inputString.equals("go ")){
+            if(inputString.contains("go ")){
                 String direction = inputString.substring(3);
                 Map.playerGo(direction, midievalRoom);
             }

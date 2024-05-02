@@ -2,11 +2,11 @@ import java.util.ArrayList;
 
 public class Map {
 
-    private static int playerPosx;
-    private static int playerPosy;
+    private static int playerPosx = 0;
+    private static int playerPosy = 0;
 
-    playerPosx = 0;
-    playerPosy = 0;
+    // playerPosx = 0;
+    // playerPosy = 0;
     // static String[][] jewelryRoom = {
     //     {"Door", "Blocked", "Blocked", "Blocked"},
     //     {"Empty", "Hammer", "Empty", "Empty"},
@@ -36,6 +36,9 @@ public class Map {
         if(direction.contains("forward")){
             if(playerPosy++ < 3 && !room[playerPosx][playerPosy++].contains("Blocked")){
                 playerPosy = playerPosy++;
+            }
+            else {
+                Room.roomBlocked(true);
             }
         }
         if(direction.contains("backward")){
@@ -73,12 +76,8 @@ public class Map {
                 Character.knight();
                 break;
             case "Object":
-                //handle object logic
+                System.out.println("It looks like theres an object on the floor! Would you like to take it?");
                 break;
-        }
-       
-    }
-
-  
-      
+        }      
+    }      
 }

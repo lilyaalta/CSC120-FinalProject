@@ -6,7 +6,7 @@ public Class Character {
     ArrayList<String> numberList = new ArrayList<String>();
 
     // when a character is at the spot where the knight is
-    private void knight () {
+    private void knight() {
         System.out.println("You have bumped into a knight in shining armor!");
         System.out.println("You notice that it seems to be moving on its own a little... but you go to steal its helmet....");
         System.out.println("When it grabs your arm! Do you A) talk to it or B) fight?");
