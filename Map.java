@@ -59,7 +59,7 @@ public class Map {
             } 
             }
             checkRoom(room[playerPosx][playerPosy]);
-    }
+    }     
 }
 
     public static void checkRoom(String coordinates){
