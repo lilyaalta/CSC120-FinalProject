@@ -32,7 +32,7 @@ public class Character {
             if (User.inventory.contains("Hammer")) {
                 if(chanceOfSurvival(2) == true) {
                     System.out.println("You decide to valiantly battle this knight, hitting this thin sheet of human-shaped metal right where it hurts...");
-                    System.out.println("And you win! Congrats. You can go about your theivery, but don't forget to add your new trophy to your sachel!");
+                    System.out.println("And you win! Congrats. You can go about your theivery, but don't forget to add your new trophy to your satchel!");
                 }
                 // if it is false, die
                 System.out.println("You do not make it against this knight. Who knew a suit of armor with no muscle or real body parts was so strong!");
