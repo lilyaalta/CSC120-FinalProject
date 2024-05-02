@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class Map {
 
@@ -24,9 +23,9 @@ public class Map {
     // playerPosx = 0;
     // playerPosy = 0;
     
-    public static boolean getSpot(String[][] room) {
+    public static boolean getSpot(String[][] place) {
         // Check if coordinates are within the map bounds
-        if (playerPosx >= 0 && playerPosx < room.length && playerPosy >= 0 && playerPosy < room[0].length) {
+        if (playerPosx >= 0 && playerPosx < place.length && playerPosy >= 0 && playerPosy < place[0].length) {
             return true;
         } else {
              System.out.println("Coordinates out of bounds.");
@@ -45,35 +44,44 @@ public class Map {
                     playerPosy = playerPosy++;
                 }
                 else {
-                    checkRoom(room[playerPosx][playerPosy]);
+                    checkRoom(playerPosx, playerPosy, room);
                 }
             }
             if(direction.contains("right")){
                 if(playerPosy-- > 0 && !room[playerPosx][playerPosy - 1].contains("Blocked")){
                     playerPosy = playerPosy--;
                 }
+                else {
+                    checkRoom(playerPosx, playerPosy, room);
             }
+        }
             if(direction.contains("forward")){
                 if(playerPosx++ < 3 && !room[playerPosx + 1][playerPosy].contains("Blocked")){
                     playerPosx = playerPosx++;  
                 }
+                else {
+                    checkRoom(playerPosx, playerPosy, room);
             }
+        }
             if(direction.contains("backward")){
                 if(playerPosx-- < 0 && !room[playerPosx - 1][playerPosy].contains("Blocked")){
                     playerPosx = playerPosx--;
                 }
+                else {
+                    checkRoom(playerPosx, playerPosy, room);
             } 
-            checkRoom(playerPosx, playerPosy);
+        }
+            else{checkRoom(playerPosx, playerPosy, room);
             }
+        }
         
 
 
     }     
-}
 
 
-    public static void checkRoom(int x, int y) {
-        switch (room[x][y]) {
+    public static void checkRoom(int x, int y, String[][] map) {
+        switch (map[x][y]) {
             case "Blocked":
             System.out.println("Sorry, this space is blocked, try moving somewhere else!");
                 break;
@@ -90,7 +98,7 @@ public class Map {
                 System.out.println("call knight!!!!");
                 break;
             case "Object":
-                System.out.println("say something idk");
+                System.out.println("There's a sword! Do you want to take the sword? Use the action 'take' along with the object name to grab the object!");
                 break;
         }      
     }      
