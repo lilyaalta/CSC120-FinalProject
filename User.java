@@ -24,6 +24,7 @@ public class User {
                 // if your inventory is empty
                 if (inventory.size() == 0) {
                     inventory.add(object);
+                    System.out.println("you have added" + object + "to your inventory!");
                 }
                 System.out.println("You already have an object in your inventory... you can only have one!");
             }
@@ -41,12 +42,13 @@ public class User {
                 // if the character is one of these 2 things
                 if (object == "Key" | object == "scroll") {
                     satchel.add(object);
+                    System.out.println("You have added" + object+ "to your secret satchel");
                 }
                 System.out.println("You can't steal this object, try taking it!");
             }
             System.out.println("You already have an object in your inventory... you can only have one!");
         }
-        System.out.println("There is currently nothing to steal! Or, if there is, try capitalizing the first letter");
+        System.out.println("There is currently nothing to steal!");
     }
 
     public static void drop(String object) {
@@ -62,6 +64,6 @@ public class User {
     }
 
     public static void viewInventory() {
-        System.out.println("You currently have"+ inventory +"in your inventory");
+        System.out.println("You currently have"+ inventory + "in your inventory");
     }
 }
