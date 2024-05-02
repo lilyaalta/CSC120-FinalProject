@@ -10,36 +10,47 @@ public class User {
     ArrayList<String> inventory = new ArrayList<String>();
     ArrayList<String> sachel = new ArrayList<String>();
 
-    public void take() {
-        if (//object is there to take//) {
-            if (//inventory.size() == 0)//) {
-                inventory.add(//object);
-                //object must be deleted from coordinates//
+    public void take(String object) {
+        //if you are at the right location
+        if(Map.getSpot("midievalRoom") == [1][3]){
+            // if spot contains the object
+            if (object == "Sword" | object == "Rope" | Object == "Armor" | Object == "Hammer" ) {
+                // if your inventory is empty
+                if (inventory.size == 0) {
+                    inventory.add(object);
+                }
+                System.out.println("You already have an object in your inventory... you can only have one!");
             }
-            System.out.println("You already have an object in your inventory... you can only have one!");
+            System.out.println("There is currently nothing to take!");
         }
-        System.out.println("There is currently nothing to take!");
     }
 
-    public void steal() {
-        if (//object is there to take//) {
-            if (//object is not already in the list) {
-                if (//object is smth to be stolen) {
-                    sachel.add(//object);
+    public void steal(String object) {
+        // if the coordinates are right
+        if (Map.getSpot("midievalRoom") == [4][2]) {
+            // if there is not one already in the sachel
+            if (!sachel.contains(Object)) {
+                // if the character is one of these 2 things
+                if (Object == "Key" | Object == "scroll") {
+                    sachel.add();
                 }
                 System.out.println("You can't steal this object, try taking it!");
             }
             System.out.println("You already have an object in your inventory... you can only have one!");
         }
-        System.out.println("There is currently nothing to take!");
+        System.out.println("There is currently nothing to steal! Or, if there is, try capitalizing the first letter");
     }
 
-    public void drop() {
-        if (//inventory.size() == 0 //) {
-            System.out.println("You have successfully dropped" + object + "!");
-            // object added to new coordinates
+    public void drop(String object) {
+        if (inventory.contains(object)) {
+            inventory.remove(object);
+            System.out.println("You have successfully dropped" + object + "from your inventory!");
         }
-        System.out.println("There is nothing to pick up!");
+        if (sachel.contains(object)) {
+            sachel.remove(object);
+            System.out.println("You have successfully dropped" + object + "from your sachel!");
+        }
+        System.out.println("There is nothing to drop!");
     }
 
     public void inventory() {

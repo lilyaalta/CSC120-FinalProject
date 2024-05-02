@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Main {
     //initializing objects
-    // objects which are sword, rope, hammer, armor
+    // strings which are sword, rope, hammer, armor
+    // strings key, scroll. 
     
     
 
@@ -26,7 +27,7 @@ public class Main {
                 Map.playerGo(direction, midievalRoom);
             }
             else{
-                System.out.println("invalid inout. PLease use 'go' along with a direction to move");
+                System.out.println("invalid input. PLease use 'go' along with a direction to move");
             }
         }
   }
