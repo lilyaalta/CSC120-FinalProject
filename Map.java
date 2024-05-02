@@ -65,11 +65,11 @@ public class Map {
     }     
 }
 
-public static String trackCoord(String[][] room, int x, int y ){
-    return room[x][y];
+public static String trackCoord(){
+    return Main.midievalRoom[playerPosx][playerPosy];
 }
 
-    public static void checkRoom(String coordinates){
+    public static void checkRoom(String coordinates) {
         switch (coordinates) {
             case "Blocked":
             System.out.println("Sorry, this space is blocked, try moving somewhere else!");
