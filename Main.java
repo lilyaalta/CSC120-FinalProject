@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Main {
     //initializing objects
-    // objects which are sword, rope, hammer, armor
+    // strings which are sword, rope, hammer, armor
+    // strings key, scroll. 
     
     
 

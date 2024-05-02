@@ -1,6 +1,6 @@
-java.util.Random
-java.until.ArrayList
-public Class Character {
+import java.util.Random;
+import java.util.ArrayList;
+public class Character {
     
     private int characterLocation;
     ArrayList<String> numberList = new ArrayList<String>();
@@ -16,7 +16,7 @@ public Class Character {
         }
         if (scanner ans == b) {
             // check inventory
-            if (inventory.contains("Hammer")) {
+            if (User.inventory.contains("Hammer")) {
                 if(chanceOfSurvival(2) == true) {
                     System.out.println("You decide to valiantly battle this knight, hitting this thin sheet of human-shaped metal right where it hurts...");
                     System.out.println("And you win! Congrats. You can go about your theivery, but don't forget to add your new trophy to your sachel!");
@@ -25,13 +25,13 @@ public Class Character {
                 // if it is false, die
                 System.out.println("You do not make it against this knight. Who knew a suit of armor with no muscle or real body parts was so strong!");
             }
-            if (inventory.contains("Rope")) {
+            if (User.inventory.contains("Rope")) {
                 if(chanceOfSurvival(1) == true) {
                     System.out.println("You toss the rope cowboy-style at the franken-suit and its rusty screws crumble. The suit falls apart! Congrats!");
                 }
                 System.out.println("That knight knew what you were trying to do, and grabbed the rope. You lose!");
             }
-            if (inventory.contains("Sword")) {
+            if (User.inventory.contains("Sword")) {
                 if(chanceOfSurvival(3) == true) {
                     System.out.println("Even though you have never fought with a sword before, you are a natural!");
                     System.out.println("You and the knight clash swords, a long lasting and graceful battle.");
@@ -39,7 +39,7 @@ public Class Character {
                 }
                 System.out.println("You have never used a sword in your life and it shows...");
             }
-            if (inventory.contains("Armor")) {
+            if (User.inventory.contains("Armor")) {
                 if(chanceOfSurvival(1) == true) {
                     System.out.println("Well, using a suit of armor against a suit of armor was a choice, but a smart one apparently.");
                     System.out.println("because you win!");
