@@ -33,14 +33,14 @@ public class User {
 
     //Map.getSpot(room[0][0]);
 
-    public static void steal(String object) {
+    public static void steal(String object, String[][] room) {
         // if the coordinates are right
-        if (Map.getSpot("midievalRoom") == [4][2]) {
+        if (room[y][x] == "Object") {
             // if there is not one already in the satchel
             if (!satchel.contains(object)) {
                 // if the character is one of these 2 things
-                if (Object == "Key" | Object == "scroll") {
-                    satchel.add();
+                if (object == "Key" | object == "scroll") {
+                    satchel.add(object);
                 }
                 System.out.println("You can't steal this object, try taking it!");
             }
