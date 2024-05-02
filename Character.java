@@ -5,11 +5,11 @@ public class Character {
     
     private int characterLocation;
     ArrayList<String> numberList = new ArrayList<String>();
-    Scanner scanAnswers = new Scanner(System.in);
+    static Scanner scanAnswers = new Scanner(System.in);
     Random rand = new Random();
 
     // when a character is at the spot where the knight is
-    private void knight() {
+    public static void knight() {
         System.out.println("You have bumped into a knight in shining armor!");
         System.out.println("You notice that it seems to be moving on its own a little... but you go to steal its helmet....");
         System.out.println("When it grabs your arm! Do you A) talk to it or B) fight? Type talk or fight into console");
@@ -134,7 +134,7 @@ public class Character {
      * @param number, the set number that helps determine chances
      * @return a boolean t/f that shows survival of the user
      */
-    private boolean chanceOfSurvival (int number) {
+    private static boolean chanceOfSurvival (int number) {
         // if input number 3
         int randomNumber = rand.nextInt(10);
         if (number == 3) {

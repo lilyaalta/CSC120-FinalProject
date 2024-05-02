@@ -95,7 +95,8 @@ public class Map {
                 System.out.println("Looks like you're at a door! Do you wish to leave?");
                 break;
             case "Knight":
-                System.out.println("call knight!!!!");
+                System.out.println("There's a knight! And it moves! You can fight it by using the action 'fight'");
+                Character.knight();
                 break;
             case "Sword":
                 System.out.println("There's a sword! Do you want to take the sword? Use the action 'take' along with the object name to grab the object!");
