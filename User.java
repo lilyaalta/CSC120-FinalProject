@@ -9,16 +9,16 @@ public class User {
     public String whereAreYou;
     static ArrayList<String> inventory = new ArrayList<String>();
     static ArrayList<String> satchel = new ArrayList<String>();
-    int x = Map.getPlayerPosx();
-    int y = Map.getPlayerPosy();
+    public static int x = Map.getPlayerPosx();
+    public static int y = Map.getPlayerPosy();
 
         // Modifying player position
     // Map.setPlayerPosx(x + 1);
     // Map.setPlayerPosy(y - 1);
 
-    public static void take(String object) {
+    public static void take(String object, String[][] room) {
         //if you are at the right location
-        if(Map.trackCoords()){
+        if(room[y][x] == "Object"){
             // if spot contains the object
             if (object == "Sword" | object == "Rope" | object == "Armor" | object == "Hammer" ) {
                 // if your inventory is empty

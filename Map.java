@@ -23,25 +23,15 @@ public class Map {
 
     // playerPosx = 0;
     // playerPosy = 0;
-    // static String[][] jewelryRoom = {
-    //     {"Door", "Blocked", "Blocked", "Blocked"},
-    //     {"Empty", "Hammer", "Empty", "Empty"},
-    //     {"Trap", "Empty", "Empty", "Rope"},
-    //     {"Blocked", "Blocked", "Blocked", "Door"}
-    // };
-    // static String[][] paintingRoom = {
-    //     {"Door",   "Character", "Blocked", "Trap"},
-    //     {"Empty",  "Trap",      "Rope",     "Trap"},
-    //     {"Empty",  "Empty",     "Empty",    "Sword"},
-    //     {"Hammer", "Empty",     "Trap",     "Door"}
-    // };
+    
     public static boolean getSpot(String[][] room) {
         // Check if coordinates are within the map bounds
         if (playerPosx >= 0 && playerPosx < room.length && playerPosy >= 0 && playerPosy < room[0].length) {
+            return true;
         } else {
              System.out.println("Coordinates out of bounds.");
+             return false;
             }
-        return true;
     }
     /*/
     how do I get this to pin point the specific coordinates and then 
@@ -59,7 +49,7 @@ public class Map {
                 }
             }
             if(direction.contains("right")){
-                if(playerPosy-- > 0 && !room[playerPosx][playerPosy + 1].contains("Blocked")){
+                if(playerPosy-- > 0 && !room[playerPosx][playerPosy - 1].contains("Blocked")){
                     playerPosy = playerPosy--;
                 }
             }
@@ -69,19 +59,21 @@ public class Map {
                 }
             }
             if(direction.contains("backward")){
-                if(playerPosx-- < 0 && !room[playerPosx + 1][playerPosy].contains("Blocked")){
+                if(playerPosx-- < 0 && !room[playerPosx - 1][playerPosy].contains("Blocked")){
                     playerPosx = playerPosx--;
                 }
             } 
+            checkRoom(playerPosx, playerPosy);
             }
+        
 
 
     }     
 }
 
 
-    public static void checkRoom(String coordinates) {
-        switch (coordinates) {
+    public static void checkRoom(int x, int y) {
+        switch (room[x][y]) {
             case "Blocked":
             System.out.println("Sorry, this space is blocked, try moving somewhere else!");
                 break;

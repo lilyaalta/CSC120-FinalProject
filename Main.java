@@ -13,6 +13,18 @@ public class Main {
             {"Trap", "Empty", "Empty", "Blocked"},
             {"Blocked", "Knight", "Empty", "Door"}
          };
+     //  String[][] jewelryRoom = {
+    //     {"Door", "Blocked", "Blocked", "Blocked"},
+    //     {"Empty", "Hammer", "Empty", "Empty"},
+    //     {"Trap", "Empty", "Empty", "Rope"},
+    //     {"Blocked", "Blocked", "Blocked", "Door"}
+    // };
+    //  String[][] paintingRoom = {
+    //     {"Door",   "Character", "Blocked", "Trap"},
+    //     {"Empty",  "Trap",      "Rope",     "Trap"},
+    //     {"Empty",  "Empty",     "Empty",    "Sword"},
+    //     {"Hammer", "Empty",     "Trap",     "Door"}
+    // };
         Scanner gameScanner = new Scanner(System.in);  // I don't know why this is being mad
         System.out.println("Hello! Welcome to Escape the Museum! Where would you like to go?");
         System.out.println("HINT: You can use the verb 'go' to move and specify the direction: forward, right, left, backward");
@@ -31,7 +43,7 @@ public class Main {
             }
             if(inputString.contains("take")){
                 String object = inputString;
-                User.take(object);
+                User.take(object, midievalRoom);
             }
             if(inputString.contains("view inventory")){
                 User.viewInventory();
@@ -40,9 +52,14 @@ public class Main {
                 String object = inputString;
                 User.drop(object);
             }
+            else if (inputString.contains("exit")) {
+                System.out.println("Exiting game. Goodbye!");
+                break; // Exit the loop and end the game
+            }
             else{
                 System.out.println("invalid input. PLease use a action along with direction or object ");
             }
         }
+        gameScanner.close();
   }
 }
