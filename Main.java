@@ -43,15 +43,20 @@ public class Main {
                 Map.playerGo(direction, midievalRoom);
             }
             if(inputString.contains("steal")){
-                String object = inputString;
-                User.steal(object, midievalRoom);
+                if (inputString.contains("scroll")){
+                    String object = "scroll";
+                    User.steal(object, midievalRoom);
+                }
                 
             }
             if(inputString.contains("take")){
-                String object = inputString;
-                User.take(object, midievalRoom);
+                if (inputString.contains("sword")){
+                    String object = "sword";
+                    User.take(object, midievalRoom);
+                }
+                //System.out.println("uh oh");
             }
-            if(inputString.contains("view inventory")){
+            if(inputString.contains("inventory")){
                 User.viewInventory();
             }
             if(inputString.contains("drop")){
