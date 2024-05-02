@@ -7,14 +7,14 @@ import javax.sound.sampled.SourceDataLine;
 public class User {
     public String userName;
     public String whereAreYou;
-    ArrayList<String> inventory = new ArrayList<String>();
-    ArrayList<String> sachel = new ArrayList<String>();
+    static ArrayList<String> inventory = new ArrayList<String>();
+    static ArrayList<String> sachel = new ArrayList<String>();
 
-    public void take(String object) {
+    public static void take(String object) {
         //if you are at the right location
-        if(Map.getSpot("midievalRoom") == [1][3]){
+        if(Map.playerPosx == 3 & Map.playerPosy == 2){
             // if spot contains the object
-            if (object == "Sword" | object == "Rope" | Object == "Armor" | Object == "Hammer" ) {
+            if (object == "Sword" | object == "Rope" | object == "Armor" | object == "Hammer" ) {
                 // if your inventory is empty
                 if (inventory.size == 0) {
                     inventory.add(object);
@@ -25,11 +25,13 @@ public class User {
         }
     }
 
-    public void steal(String object) {
+    //Map.getSpot(room[0][0]);
+
+    public static void steal(String object) {
         // if the coordinates are right
         if (Map.getSpot("midievalRoom") == [4][2]) {
             // if there is not one already in the sachel
-            if (!sachel.contains(Object)) {
+            if (!sachel.contains(object)) {
                 // if the character is one of these 2 things
                 if (Object == "Key" | Object == "scroll") {
                     sachel.add();
@@ -41,7 +43,7 @@ public class User {
         System.out.println("There is currently nothing to steal! Or, if there is, try capitalizing the first letter");
     }
 
-    public void drop(String object) {
+    public static void drop(String object) {
         if (inventory.contains(object)) {
             inventory.remove(object);
             System.out.println("You have successfully dropped" + object + "from your inventory!");
@@ -53,7 +55,7 @@ public class User {
         System.out.println("There is nothing to drop!");
     }
 
-    public void inventory() {
+    public static void viewInventory() {
         System.out.println("You currently have"+ inventory +"in your inventory");
     }
 }

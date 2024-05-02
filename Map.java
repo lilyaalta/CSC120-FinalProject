@@ -77,7 +77,7 @@ public class Map {
                 System.out.println("Looks like you're at a door! Do you wish to leave?");
                 break;
             case "Knight":
-                System.out.println("call knight");;
+                System.out.println("call knight");
                 break;
             case "Object":
                 System.out.println("It looks like theres an object on the floor! Would you like to take it?");

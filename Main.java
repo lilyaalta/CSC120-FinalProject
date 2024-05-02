@@ -27,6 +27,22 @@ public class Main {
                 Map.getSpot(midievalRoom);
                 Map.playerGo(direction, midievalRoom);
             }
+            if(inputString.contains("steal")){
+                String object = inputString;
+                User.steal(object);
+                
+            }
+            if(inputString.contains("take")){
+                String object = inputString;
+                User.take(object);
+            }
+            if(inputString.contains("view inventory")){
+                User.viewInventory();
+            }
+            if(inputString.contains("drop")){
+                String object = inputString;
+                User.drop(object);
+            }
             else{
                 System.out.println("invalid input. PLease use 'go' along with a direction to move");
             }
