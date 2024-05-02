@@ -38,7 +38,7 @@ public class Main {
             }
             if(inputString.contains("steal")){
                 String object = inputString;
-                User.steal(object);
+                User.steal(object, midievalRoom);
                 
             }
             if(inputString.contains("take")){

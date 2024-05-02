@@ -6,6 +6,7 @@ public class Character {
     private int characterLocation;
     ArrayList<String> numberList = new ArrayList<String>();
     Scanner scanAnswers = new Scanner(System.in);
+    Random rand = new Random();
 
     // when a character is at the spot where the knight is
     private void knight() {
@@ -164,5 +165,6 @@ public class Character {
             return false;
         }
         System.out.println("need to input valid number");
+        return false;
     }
 }
