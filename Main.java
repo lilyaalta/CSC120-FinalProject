@@ -28,7 +28,7 @@ public class Main {
                 Map.playerGo(direction, midievalRoom);
             }
             else{
-                System.out.println("invalid input. PLease use 'go' along with a direction to move");
+                System.out.println("invalid input. PLease use a action along with direction or object ");
             }
         }
   }

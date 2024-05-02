@@ -34,31 +34,31 @@ public class Map {
 
     public static void playerGo(String direction, String[][] room){
         if(getSpot(room) == true){
-            if(direction.contains("forward")){
-                if(playerPosy++ < 3 && !room[playerPosx][playerPosy++].contains("Blocked")){
+            if(direction.contains("left")){
+                if(playerPosy++ < 3 && !room[playerPosx][playerPosy + 1].contains("Blocked")){
                     playerPosy = playerPosy++;
                 }
                 else {
                     checkRoom(room[playerPosx][playerPosy]);
                 }
             }
-            if(direction.contains("backward")){
-                if(playerPosy-- > 0 && !room[playerPosx][playerPosy++].contains("Blocked")){
+            if(direction.contains("right")){
+                if(playerPosy-- > 0 && !room[playerPosx][playerPosy + 1].contains("Blocked")){
                     playerPosy = playerPosy--;
                 }
             }
-            if(direction.contains("left")){
-                if(playerPosx++ < 3 && !room[playerPosx][playerPosy++].contains("Blocked")){
+            if(direction.contains("forward")){
+                if(playerPosx++ < 3 && !room[playerPosx + 1][playerPosy].contains("Blocked")){
                     playerPosx = playerPosx++;  
                 }
             }
-            if(direction.contains("right")){
-                if(playerPosx-- < 0 && !room[playerPosx][playerPosy++].contains("Blocked")){
+            if(direction.contains("backward")){
+                if(playerPosx-- < 0 && !room[playerPosx + 1][playerPosy].contains("Blocked")){
                     playerPosx = playerPosx--;
                 }
+            } 
             }
-            System.out.println(playerPosx);
-            System.out.println(playerPosy);
+            checkRoom(room[playerPosx][playerPosy]);
     }
 }
 
@@ -77,10 +77,10 @@ public class Map {
                 System.out.println("Looks like you're at a door! Do you wish to leave?");
                 break;
             case "Knight":
-                System.out.println("call knight");;
+                System.out.println("call knight!!!!");
                 break;
             case "Object":
-                System.out.println("It looks like theres an object on the floor! Would you like to take it?");
+                System.out.println("say something idk");
                 break;
         }      
     }      
