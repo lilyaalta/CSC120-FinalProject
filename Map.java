@@ -95,7 +95,7 @@ public class Map {
                 System.out.println("Looks like you're at a door! If you wish to leave you can type quit, if not you should go another way.");
                 break;
             case "Knight":
-                System.out.println("You've met a character!");
+                System.out.println("Here is the knight! If you want to interact with the knight, type 'knight!'");
                 Character.knight();
                 break;
             case "Sword":

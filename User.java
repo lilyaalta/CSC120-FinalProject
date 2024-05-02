@@ -65,6 +65,6 @@ public class User {
 
     public static void viewInventory() {
         System.out.println("You currently have "+ inventory + " in your inventory");
-        System.out.println("You currently have "+ satchel + " in your inventory");
+        //System.out.println("You currently have "+ satchel + " in your inventory");
     }
 }

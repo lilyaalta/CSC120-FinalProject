@@ -39,6 +39,9 @@ public class Main {
 // figure out how to loop this so that it keeps running!!
         while(true) {
             String inputString = gameScanner.nextLine().toLowerCase();
+            if(inputString.contains("knight")){
+                Character.knight();
+            }
             if(inputString.contains("go")){
                 String direction = inputString;
                 Map.getSpot(midievalRoom);

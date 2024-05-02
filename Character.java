@@ -13,20 +13,21 @@ public class Character {
         System.out.println("You have bumped into a knight in shining armor!");
         System.out.println("You notice that it seems to be moving on its own a little... but you go to steal its helmet....");
         System.out.println("When it grabs your arm! Do you A) talk to it or B) fight? Type talk or fight into console");
-        String inputString = scanAnswers.nextLine().toLowerCase();
-        if (inputString == "talk"){
-            if (chanceOfSurvival(1) == true){
-                if (chanceOfSurvival(3)== true){
+        String userAns = scanAnswers.nextLine().toLowerCase();
+        if (userAns.contains("talk")){
+            if (chanceOfSurvival(1) == true) {
+                if (chanceOfSurvival(3)== true) {
                     System.out.println("The knight tells you: 'you know, I normally don't do this with intruders, but I'm gonna help you.' ");
                     System.out.println("Curious, you ask how. It says 'take this scroll. It might be worth money, who knows. I've been'");
                     System.out.println("'been in the museum for too long and I'm bored. Steal it.'");
-                }
-                System.out.println("");
+                } else {
                 System.out.println("'Sooo... hey,' you say to the suit of armor. 'Come here often?'");
                 System.out.println("The knight is taken aback by your audacity and yells for security. You are arrested");
-            }
+                }
+            } else {
             System.out.println("Before you can even get a word out, the suit of armor grabs his sword and stabs you,");
             System.out.println("This was not a friendly suit of armor, apparently. maybe don't try to talk to it...");
+            }
         }
         if (inputString == "fight") {
             // check inventory
