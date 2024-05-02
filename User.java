@@ -20,7 +20,7 @@ public class User {
         //if you are at the right location
         if(room[y][x] == "Object"){
             // if spot contains the object
-            if (object == "Sword" | object == "Rope" | object == "Armor" | object == "Hammer" ) {
+            if (object == "sword" | object == "Rope" | object == "Armor" | object == "Hammer" ) {
                 // if your inventory is empty
                 if (inventory.size() == 0) {
                     inventory.add(object);

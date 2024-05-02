@@ -8,11 +8,17 @@ public class Main {
          // where should these go
 
      String[][] midievalRoom = {
-            {"Door", "Blocked", "Blocked", "Blocked"},
-            {"Empty", "Empty", "Object", "Blocked"},
-            {"Empty", "Empty", "Empty", "Blocked"},
-            {"Blocked", "Knight", "Empty", "Door"}
+            {"Door", "Empty", "Empty", "Empty"},
+            {"Empty", "Empty", "Sword", "Empty"},
+            {"Empty", "Empty", "Empty", "Empty"},
+            {"Empty", "Knight", "Empty", "Door"}
          };
+        //  String[][] midievalRoom = {
+        //     {"Door", "Blocked", "Blocked", "Blocked"},
+        //     {"Empty", "Empty", "Object", "Blocked"},
+        //     {"Empty", "Empty", "Empty", "Blocked"},
+        //     {"Blocked", "Knight", "Empty", "Door"}
+        //  };
      //  String[][] jewelryRoom = {
     //     {"Door", "Blocked", "Blocked", "Blocked"},
     //     {"Empty", "Hammer", "Empty", "Empty"},
