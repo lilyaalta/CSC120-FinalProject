@@ -5,8 +5,6 @@ import javax.sound.sampled.SourceDataLine;
 // initialize in main for objects and coordinates and anything that will be used across files
 
 public class User {
-    public String userName;
-    public String whereAreYou;
     static ArrayList<String> inventory = new ArrayList<String>();
     static ArrayList<String> satchel = new ArrayList<String>();
     public static int x = Map.getPlayerPosx();
@@ -18,7 +16,8 @@ public class User {
 
     public static void take(String object, String[][] room) {
         //if you are at the right location
-        if(room[y][x] == "Object"){
+        // would normally say "Object"
+        if(room[y][x] == "Sword"){
             // if spot contains the object
             if (object == "Sword" | object == "Rope" | object == "Armor" | object == "Hammer" ) {
                 // if your inventory is empty
