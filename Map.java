@@ -58,8 +58,15 @@ public class Map {
                 }
             } 
             }
+            trackCoord(room, playerPosx, playerPosx);
             checkRoom(room[playerPosx][playerPosy]);
+
+
     }     
+}
+
+public static String trackCoord(String[][] room, int x, int y ){
+    return room[x][y];
 }
 
     public static void checkRoom(String coordinates){
