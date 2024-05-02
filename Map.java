@@ -56,7 +56,7 @@ public class Map {
             }
         }
             if(direction.contains("forward")){
-                if(playerPosx++ < 3 && !room[playerPosx + 1][playerPosy].contains("Blocked")){
+                if(playerPosx++ < 4 && !room[playerPosx + 1][playerPosy].contains("Blocked")){
                     playerPosx = playerPosx++;  
                 }
                 else {
@@ -92,13 +92,15 @@ public class Map {
                 System.out.println("Oh no! It's a trap. You just reset in the game. Back to square one!");
                 break;
             case "Door":
-                System.out.println("Looks like you're at a door! Do you wish to leave?");
+                System.out.println("Looks like you're at a door! If you wish to leave you can type quit, if not you should go another way.");
                 break;
             case "Knight":
-                System.out.println("call knight!!!!");
+                System.out.println("You've met a character!");
+                Character.knight();
                 break;
             case "Sword":
                 System.out.println("There's a sword! Do you want to take the sword? Use the action 'take' along with the object name to grab the object!");
+                
                 break;
         }      
     }      
