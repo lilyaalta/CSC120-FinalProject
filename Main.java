@@ -13,7 +13,7 @@ public class Main {
             {"Door", "Blocked", "Blocked", "Blocked"},
             {"Empty", "Empty", "Object", "Blocked"},
             {"Trap", "Empty", "Empty", "Blocked"},
-            {"Blocked", "Character", "Empty", "Door"}
+            {"Blocked", "Knight", "Empty", "Door"}
          };
         Scanner gameScanner = new Scanner(System.in);  // I don't know why this is being mad
         System.out.println("Hello! Welcome to Escape the Museum! Where would you like to go?");
@@ -21,12 +21,13 @@ public class Main {
 
         while(true) {
             String inputString = gameScanner.nextLine().toLowerCase();
-            if(inputString.contains("go ")){
-                String direction = inputString.substring(3);
+            if(inputString.contains("go")){
+                String direction = inputString;
+                Map.getSpot(midievalRoom);
                 Map.playerGo(direction, midievalRoom);
             }
             else{
-                System.out.println("invalid inout. PLease use 'go' along with a direction to move");
+                System.out.println("invalid input. PLease use 'go' along with a direction to move");
             }
         }
   }

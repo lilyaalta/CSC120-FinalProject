@@ -19,13 +19,13 @@ public class Map {
     //     {"Empty",  "Empty",     "Empty",    "Sword"},
     //     {"Hammer", "Empty",     "Trap",     "Door"}
     // };
-    public static void getSpot(String[][] room) {
+    public static boolean getSpot(String[][] room) {
         // Check if coordinates are within the map bounds
         if (playerPosx >= 0 && playerPosx < room.length && playerPosy >= 0 && playerPosy < room[0].length) {
-            checkRoom(room[playerPosx][playerPosy]);
         } else {
              System.out.println("Coordinates out of bounds.");
             }
+        return true;
     }
     /*/
     how do I get this to pin point the specific coordinates and then 
@@ -33,47 +33,51 @@ public class Map {
      */
 
     public static void playerGo(String direction, String[][] room){
-        if(direction.contains("forward")){
-            if(playerPosy++ < 3 && !room[playerPosx][playerPosy++].contains("Blocked")){
-                playerPosy = playerPosy++;
+        if(getSpot(room) == true){
+            if(direction.contains("forward")){
+                if(playerPosy++ < 3 && !room[playerPosx][playerPosy++].contains("Blocked")){
+                    playerPosy = playerPosy++;
+                }
+                else {
+                    checkRoom(room[playerPosx][playerPosy]);
+                }
             }
-            else {
-                Room.roomBlocked(true);
+            if(direction.contains("backward")){
+                if(playerPosy-- > 0 && !room[playerPosx][playerPosy++].contains("Blocked")){
+                    playerPosy = playerPosy--;
+                }
             }
-        }
-        if(direction.contains("backward")){
-            if(playerPosy-- > 0 && !room[playerPosx][playerPosy++].contains("Blocked")){
-                playerPosy = playerPosy--;
+            if(direction.contains("left")){
+                if(playerPosx++ < 3 && !room[playerPosx][playerPosy++].contains("Blocked")){
+                    playerPosx = playerPosx++;  
+                }
             }
-        }
-        if(direction.contains("left")){
-            if(playerPosx++ < 3 && !room[playerPosx][playerPosy++].contains("Blocked")){
-                playerPosx = playerPosx++;  
+            if(direction.contains("right")){
+                if(playerPosx-- < 0 && !room[playerPosx][playerPosy++].contains("Blocked")){
+                    playerPosx = playerPosx--;
+                }
             }
-        }
-        if(direction.contains("right")){
-            if(playerPosx-- < 0 && !room[playerPosx][playerPosy++].contains("Blocked")){
-                playerPosx = playerPosx--;
-            }
-        }
+            System.out.println(playerPosx);
+            System.out.println(playerPosy);
     }
+}
 
     public static void checkRoom(String coordinates){
         switch (coordinates) {
             case "Blocked":
-                Room.roomBlocked(true);
+            System.out.println("Sorry, this space is blocked, try moving somewhere else!");
                 break;
             case "Empty":
-                Room.roomEmpty(true);
+                System.out.println("This space is empty, keep going!");
                 break;
             case "Trap":
-                Room.roomTrap(true);
+                System.out.println("Oh no! It's a trap. You just reset in the game. Back to square one!");
                 break;
             case "Door":
-                Room.roomDoor(true);
+                System.out.println("Looks like you're at a door! Do you wish to leave?");
                 break;
-            case "Character":
-                Character.knight();
+            case "Knight":
+                System.out.println("call knight");;
                 break;
             case "Object":
                 System.out.println("It looks like theres an object on the floor! Would you like to take it?");
