@@ -9,6 +9,12 @@ public class User {
     public String whereAreYou;
     static ArrayList<String> inventory = new ArrayList<String>();
     static ArrayList<String> satchel = new ArrayList<String>();
+    int x = Map.getPlayerPosx();
+    int y = Map.getPlayerPosy();
+
+        // Modifying player position
+    // Map.setPlayerPosx(x + 1);
+    // Map.setPlayerPosy(y - 1);
 
     public static void take(String object) {
         //if you are at the right location

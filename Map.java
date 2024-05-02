@@ -5,6 +5,22 @@ public class Map {
     private static int playerPosx = 0;
     private static int playerPosy = 0;
 
+    public static int getPlayerPosx() {
+        return playerPosx;
+    }
+
+    public static int getPlayerPosy() {
+        return playerPosy;
+    }
+
+    public static void setPlayerPosx(int newPosx) {
+        playerPosx = newPosx;
+    }
+
+    public static void setPlayerPosy(int newPosy) {
+        playerPosy = newPosy;
+    }
+
     // playerPosx = 0;
     // playerPosy = 0;
     // static String[][] jewelryRoom = {
@@ -58,16 +74,9 @@ public class Map {
                 }
             } 
             }
-            trackCoord(room, playerPosx, playerPosx);
-            checkRoom(room[playerPosx][playerPosy]);
 
 
-    }     
-}
-
-public static String trackCoord(String[][] room, int x, int y ){
-    return room[x][y];
-}
+    }
 
     public static void checkRoom(String coordinates){
         switch (coordinates) {
