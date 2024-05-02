@@ -100,6 +100,7 @@ public class Map {
                 break;
             case "Sword":
                 System.out.println("There's a sword! Do you want to take the sword? Use the action 'take' along with the object name to grab the object!");
+                
                 break;
         }      
     }      
