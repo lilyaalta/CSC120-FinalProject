@@ -25,10 +25,10 @@ public class Map {
     
     public static boolean getSpot(String[][] place) {
         // Check if coordinates are within the map bounds
-        if (playerPosx >= 0 && playerPosx < place.length && playerPosy >= 0 && playerPosy < place[0].length) {
+        if (playerPosx > (-1) & playerPosx < 3 || playerPosy > (-1) & playerPosy < 3) {
             return true;
-        } else {
-             System.out.println("Coordinates out of bounds.");
+        } 
+        else {
              return false;
             }
     }
@@ -40,44 +40,54 @@ public class Map {
     public static void playerGo(String direction, String[][] room){
         if(getSpot(room) == true){
             if(direction.contains("left")){
-                if(playerPosy++ < 3 && !room[playerPosx][playerPosy + 1].contains("Blocked")){
+                if(playerPosy++ < (room.length -1)){
                     playerPosy = playerPosy++;
-                }
-                else {
                     checkRoom(playerPosx, playerPosy, room);
                 }
-            }
-            if(direction.contains("right")){
-                if(playerPosy-- > 0 && !room[playerPosx][playerPosy - 1].contains("Blocked")){
+                else {
+                    System.out.println("You fell off the map!");
+                    System.out.println("Y  = " + playerPosy + " Y =" + playerPosx);
+                }
+        }
+            else if(direction.contains("right")){
+                if(playerPosy-- > -1){
                     playerPosy = playerPosy--;
-                }
-                else {
                     checkRoom(playerPosx, playerPosy, room);
-            }
-        }
-            if(direction.contains("forward")){
-                if(playerPosx++ < 4 && !room[playerPosx + 1][playerPosy].contains("Blocked")){
-                    playerPosx = playerPosx++;  
                 }
-                else {
-                    checkRoom(playerPosx, playerPosy, room);
-            }
+                    else {
+                        System.out.println("You fell off the map!");
+                        System.out.println("Y  = " + playerPosy + " Y =" + playerPosx);
+                    }
         }
-            if(direction.contains("backward")){
-                if(playerPosx-- < 0 && !room[playerPosx - 1][playerPosy].contains("Blocked")){
+            else if(direction.contains("forward")){
+                if(playerPosx++ <= (room.length -1)){
+                    playerPosx = playerPosx++; 
+                    // System.out.println(" row " + playerPosx + " column " + playerPosy); 
+                    checkRoom(playerPosx, playerPosy, room);    
+                }
+                
+        }
+            else if(direction.contains("backward")){
+                if(playerPosx-- < -1){
                     playerPosx = playerPosx--;
-                }
-                else {
                     checkRoom(playerPosx, playerPosy, room);
-            } 
-        }
-            else{checkRoom(playerPosx, playerPosy, room);
+                }
+                    else {
+                        System.out.println("You fell off the map!");
+                        System.out.println("Y  = " + playerPosy + " Y =" + playerPosx);
+                    }
+                }
+            else{
+                System.out.println("Invalid direction. Please try again.");
             }
+            }
+        else if(getSpot(room) == false){
+            System.out.println("You fell off the map! Time to start over:( Your coordinates are back to the start.");
+            playerPosx = 0;
+            playerPosy = 0;
         }
-        
-
-
-    }     
+        }
+         
 
 
     public static void checkRoom(int x, int y, String[][] map) {
@@ -90,17 +100,24 @@ public class Map {
                 break;
             case "Trap":
                 System.out.println("Oh no! It's a trap. You just reset in the game. Back to square one!");
+                playerPosx = 0;
+                playerPosy = 0;
                 break;
+
             case "Door":
                 System.out.println("Looks like you're at a door! If you wish to leave you can type quit, if not you should go another way.");
                 break;
             case "Knight":
                 System.out.println("Here is the knight! If you want to interact with the knight, type 'knight!'");
-                Character.knight();
+                if (Character.knight()== false){
+                    System.out.println("You lost."); 
+                }
                 break;
             case "Sword":
                 System.out.println("There's a sword! Do you want to take the sword? Use the action 'take' along with the object name to grab the object!");
-                
+                break;
+            case "Exit":
+                System.out.println("You have escaped the museum!!! CONGRATS!!!");
                 break;
         }      
     }      

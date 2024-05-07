@@ -3,68 +3,93 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Character {
     
-    private int characterLocation;
+    // private int characterLocation;
     ArrayList<String> numberList = new ArrayList<String>();
     static Scanner scanAnswers = new Scanner(System.in);
-    Random rand = new Random();
+    static Random rand = new Random();
 
     // when a character is at the spot where the knight is
-    public static void knight() {
+    public static boolean knight() {
         System.out.println("You have bumped into a knight in shining armor!");
         System.out.println("You notice that it seems to be moving on its own a little... but you go to steal its helmet....");
         System.out.println("When it grabs your arm! Do you A) talk to it or B) fight? Type talk or fight into console");
         String userAns = scanAnswers.nextLine().toLowerCase();
-        if (userAns.contains("talk")){
-            if (chanceOfSurvival(1) == true) {
-                if (chanceOfSurvival(3)== true) {
-                    System.out.println("The knight tells you: 'you know, I normally don't do this with intruders, but I'm gonna help you.' ");
-                    System.out.println("Curious, you ask how. It says 'take this scroll. It might be worth money, who knows. I've been'");
-                    System.out.println("'been in the museum for too long and I'm bored. Steal it.'");
+        while (true){
+            if (userAns.contains("talk")){
+                if (chanceOfSurvival(1) == true) {
+                    if (chanceOfSurvival(3)== true) {
+                        System.out.println("The knight tells you: 'you know, I normally don't do this with intruders, but I'm gonna help you.' ");
+                        System.out.println("Curious, you ask how. It says 'take this scroll. It might be worth money, who knows. I've been \nin the museum for too long and I'm bored. Steal it.'");
+                        scanAnswers.close();
+                    } 
+                    else {
+                    System.out.println("'Sooo... hey,' you say to the suit of armor. 'Come here often?'");
+                    System.out.println("The knight is taken aback by your audacity and yells for security. You are arrested");
+                    scanAnswers.close();
+                    return false;
+                    }
                 } else {
-                System.out.println("'Sooo... hey,' you say to the suit of armor. 'Come here often?'");
-                System.out.println("The knight is taken aback by your audacity and yells for security. You are arrested");
+                System.out.println("Before you can even get a word out, the suit of armor grabs his sword and stabs you,");
+                System.out.println("This was not a friendly suit of armor, apparently. maybe don't try to talk to it...");
                 }
-            } else {
-            System.out.println("Before you can even get a word out, the suit of armor grabs his sword and stabs you,");
-            System.out.println("This was not a friendly suit of armor, apparently. maybe don't try to talk to it...");
             }
-        }
-        if (inputString == "fight") {
-            // check inventory
-            if (User.inventory.contains("Hammer")) {
-                if(chanceOfSurvival(2) == true) {
-                    System.out.println("You decide to valiantly battle this knight, hitting this thin sheet of human-shaped metal right where it hurts...");
-                    System.out.println("And you win! Congrats. You can go about your theivery, but don't forget to add your new trophy to your satchel!");
+            else if (userAns.contains("fight")) {
+                // check inventory
+                if (User.inventory.contains("Hammer")) {
+                    if(chanceOfSurvival(2) == true) {
+                        System.out.println("You decide to valiantly battle this knight, hitting this thin sheet of human-shaped metal right where it hurts...");
+                        System.out.println("And you win! Congrats. You can go about your theivery, but don't forget to add your new trophy to your satchel!");
+                        scanAnswers.close();    
+                        return true;
+                    }
+                    else{
+                    System.out.println("You do not make it against this knight. Who knew a suit of armor with no muscle or real body parts was so strong!");
+                    scanAnswers.close();
+                    return false;
+                    }
                 }
-                // if it is false, die
-                System.out.println("You do not make it against this knight. Who knew a suit of armor with no muscle or real body parts was so strong!");
-            }
-            if (User.inventory.contains("Rope")) {
-                if(chanceOfSurvival(1) == true) {
-                    System.out.println("You toss the rope cowboy-style at the franken-suit and its rusty screws crumble. The suit falls apart! Congrats!");
+                else if (User.inventory.contains("Rope")) {
+                    if(chanceOfSurvival(1) == true) {
+                        System.out.println("You toss the rope cowboy-style at the franken-suit and its rusty screws crumble. The suit falls apart! Congrats!");
+                        scanAnswers.close();
+                        return true;
+                    }
+                    System.out.println("That knight knew what you were trying to do, and grabbed the rope. You lose!");
+                    scanAnswers.close();
+                    return false;
                 }
-                System.out.println("That knight knew what you were trying to do, and grabbed the rope. You lose!");
-            }
-            if (User.inventory.contains("Sword")) {
-                if(chanceOfSurvival(3) == true) {
-                    System.out.println("Even though you have never fought with a sword before, you are a natural!");
-                    System.out.println("You and the knight clash swords, a long lasting and graceful battle.");
-                    System.out.println("... and you win!");
+                else if (User.inventory.contains("Sword")) {
+                    if(chanceOfSurvival(3) == true) {
+                        System.out.println("Even though you have never fought with a sword before, you are a natural!");
+                        System.out.println("You and the knight clash swords, a long lasting and graceful battle.");
+                        System.out.println("... and you win!");
+                        scanAnswers.close();
+                        return true;
+                    }
+                    System.out.println("You have never used a sword in your life and it shows... you lost!");
+                    scanAnswers.close();
+                    return false;
                 }
-                System.out.println("You have never used a sword in your life and it shows...");
-            }
-            if (User.inventory.contains("Armor")) {
-                if(chanceOfSurvival(1) == true) {
-                    System.out.println("Well, using a suit of armor against a suit of armor was a choice, but a smart one apparently.");
-                    System.out.println("because you win!");
+                else if (User.inventory.contains("Armor")) {
+                    if(chanceOfSurvival(1) == true) {
+                        System.out.println("Well, using a suit of armor against a suit of armor was a choice, but a smart one apparently.");
+                        System.out.println("because you win!");
+                        scanAnswers.close();
+                        return true;
 
+                    }
+                    System.out.println("Using a suit of armor against a suit of armor was not helpful. Nice try I guess.");
+                    scanAnswers.close();
+                    return false;
                 }
-                System.out.println("Using a suit of armor against a suit of armor was not helpful. Nice try I guess.");
-            }
-            System.out.println("Since you have no weapons, you bravely decide to go up against the suit...by running");
-            System.out.println("And you bravely get caught.");
-        }
+                System.out.println("Since you have no weapons, you bravely decide to go up against the suit...by running");
+                System.out.println("And you bravely get caught.");
+                scanAnswers.close();
+                return false;
+            }  
+        scanAnswers.close();
     }
+}
 
 
     private void painting () {
@@ -127,7 +152,7 @@ public class Character {
             //else you try to fistfight
             System.out.println("Since you have no weapons, you awkwardly decide how to deal with a painting that you want to fight.");
             System.out.println("You decide to unhook it and angrily toss it across the room, as it won't stop making an annoying sound");
-            System.out.println("As it flies across the room, you notice a key drops.")
+            System.out.println("As it flies across the room, you notice a key drops.");
         }
     }
     /*
