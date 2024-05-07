@@ -4,28 +4,28 @@ public class Map {
     private static int playerPosx = 0;
     private static int playerPosy = 0;
 
-    public static int getPlayerPosx() {
-        return playerPosx;
-    }
+    // public static int getPlayerPosx() {
+    //     return playerPosx;
+    // }
 
-    public static int getPlayerPosy() {
-        return playerPosy;
-    }
+    // public static int getPlayerPosy() {
+    //     return playerPosy;
+    // }
 
-    public static void setPlayerPosx(int newPosx) {
-        playerPosx = newPosx;
-    }
+    // public static void setPlayerPosx(int newPosx) {
+    //     playerPosx = newPosx;
+    // }
 
-    public static void setPlayerPosy(int newPosy) {
-        playerPosy = newPosy;
-    }
+    // public static void setPlayerPosy(int newPosy) {
+    //     playerPosy = newPosy;
+    // }
 
     // playerPosx = 0;
     // playerPosy = 0;
     
     public static boolean getSpot(String[][] place) {
         // Check if coordinates are within the map bounds
-        if (playerPosx > (-1) & playerPosx < 3 || playerPosy > (-1) & playerPosy < 3) {
+        if (playerPosx > (-1) & playerPosx < (place.length - 1) || playerPosy > (-1) & playerPosy < (place[0].length - 1)) {
             return true;
         } 
         else {
@@ -114,6 +114,7 @@ public class Map {
                 }
                 else if (Character.knight() == true){
                     System.out.println("Keep going!");
+                    
                 }
                 break;
             case "Sword":
@@ -123,5 +124,11 @@ public class Map {
                 System.out.println("You have escaped the museum!!! CONGRATS!!!");
                 break;
         }      
-    }      
+    }  
+    public static int trackCoordsX(){
+        return playerPosx;
+    }    
+    public static int trackCoordsY(){
+        return playerPosy;
+    }
 }
