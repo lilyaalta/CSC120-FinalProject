@@ -82,15 +82,16 @@ public class User {
             inventory.remove(object);
             System.out.println("You have successfully dropped " + object + " from your inventory!");
         }
-        if (satchel.contains(object)) {
+        else if (satchel.contains(object)) {
             satchel.remove(object);
             System.out.println("You have successfully dropped " + object + " from your sachel!");
+        } else {
+            System.out.println("There is nothing to drop!");
         }
-        System.out.println("There is nothing to drop!");
     }
 
     public static void viewInventory() {
         System.out.println("You currently have "+ inventory + " in your inventory");
-        //System.out.println("You currently have "+ satchel + " in your inventory");
+        System.out.println("You currently have "+ satchel + " in your inventory");
     }
 }
