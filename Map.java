@@ -97,6 +97,8 @@ public class Map {
                 System.out.println("You have escaped the museum!!! CONGRATS!!!");
                 System.out.println("You have escaped with" + User.inventory + "as your weapons and" + User.satchel + "in your satchel.");
                 break;
+            case "Rope":
+            System.out.println("There's a rope! Do you want to take the rope? Use the action 'take' along with the object name to grab the object!");
         }      
     }  
     public static int trackCoordsX(){

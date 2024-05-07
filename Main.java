@@ -5,9 +5,9 @@ public class Main {
 
      String[][] midievalRoom = {
             {"Door",  "Empty",  "Trap",   "Empty",   "Trap",     "Trap"},
-            {"Empty", "Empty",  "Sword",  "Empty",   "Painting", "Empty"},
+            {"Empty", "Empty",  "Sword",  "Empty",   "Rope", "Empty"},
             {"Trap",  "Empty",  "Empty",  "Trap",    "Empty",    "Trap"},
-            {"Trap",  "Rope",   "Trap",   "Trap",    "Empty",    "Trap"},
+            {"Trap",  "Painting",   "Trap",   "Trap",    "Empty",    "Trap"},
             {"Trap",  "Empty",  "Empty",  "Empty",    "Empty",    "Trap"},
             {"Empty", "Empty",   "Trap",  "Knight",  "Empty",    "Exit"},
          };
@@ -27,6 +27,9 @@ public class Main {
                             String object = "sword";
                             User.take(object, midievalRoom);
                         }
+                    } 
+                    else if (inputString.contains("inventory")) {
+                        User.viewInventory();
                     }
                 }
 

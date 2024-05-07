@@ -9,23 +9,36 @@ public class User {
 
     public static void take(String object, String[][] room) {
         //if you are at the right location
-        // would normally say "Object"inventory
         if(room[Map.trackCoordsX()][Map.trackCoordsY()] == "Sword"){
             // if spot contains the object
-            if (object.equals("sword") || object.equals("rope")) {
+            if (object.equals("sword")) {
                 // if your inventory is empty
                 if (inventory.size() == 0) {
                     inventory.add(object);
                     System.out.println("you have added " + object + " to your inventory!");
-                } 
-                else {
+                } else {
                     System.out.println("You already have an object in your inventory... you can only have one!");
                 }
-            } 
-        }
-        else{
-                System.out.println("There is currently nothing to take!");
-            }      
+            } else {
+                System.out.println("This object is not to take! Try stealing it?");
+            }
+        } 
+        else if(room[Map.trackCoordsX()][Map.trackCoordsY()] == "Rope"){
+            // if spot contains the object
+            if (object.equals("rope")) {
+                // if your inventory is empty
+                if (inventory.size() == 0) {
+                    inventory.add(object);
+                    System.out.println("you have added " + object + " to your inventory!");
+                } else {
+                    System.out.println("You already have an object in your inventory... you can only have one!");
+                }
+            } else {
+                System.out.println("This object is not to take! Try stealing it?");
+            }
+        } else {
+            System.out.println("There is currently nothing to take!");
+        }      
     }
 
     //Map.getSpot(room[0][0]);
