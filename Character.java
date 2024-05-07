@@ -8,6 +8,7 @@ public class Character {
     static Scanner scanAnswers = new Scanner(System.in);
     static Random rand = new Random();
 
+
     // when a character is at the spot where the knight is
     public static boolean knight() {
         System.out.println("You have bumped into a knight in shining armor!");
