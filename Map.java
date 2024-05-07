@@ -129,6 +129,7 @@ public class Map {
                 break;
             case "Exit":
                 System.out.println("You have escaped the museum!!! CONGRATS!!!");
+                System.out.println("You have escaped with" + User.inventory + "as your weapons and" + User.satchel + "in your satchel.");
                 break;
         }      
     }  

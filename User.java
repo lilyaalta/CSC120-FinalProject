@@ -35,25 +35,36 @@ public class User {
 
     public static void steal(String object, String[][] room) {
         // if the coordinates are right
-        if (room[Map.trackCoordsX()][Map.trackCoordsY()] == "Object") {
+        if (room[Map.trackCoordsX()][Map.trackCoordsY()] == "Knight") {
             // if there is not one already in the satchel
             if (!satchel.contains(object)) {
             // if the character is one of these 2 things
-                if (object == "Key" | object == "scroll") {
-                satchel.add(object);
-                System.out.println("You have added " + object + " to your secret satchel");
-            } 
-                else {
-                System.out.println("You can't steal this object, try taking it!");
-            }
-        } 
-        else {
+                if (object == "scroll") {
+                    satchel.add(object);
+                    System.out.println("You have added " + object + " to your secret satchel");
+                } else {
+                    System.out.println("You can't steal this object, try taking it!");
+                }
+            } else {
             System.out.println("You already have this object in your satchel... you can only have one!");
+            }
         }
-    }
-    else{
+        else if (room[Map.trackCoordsX()][Map.trackCoordsY()] == "Painting") {
+        // if there is not one already in the satchel
+            if (!satchel.contains(object)) {
+        // if the character is one of these 2 things
+                if (object == "necklace") {
+                    satchel.add(object);
+                    System.out.println("You have added " + object + " to your secret satchel");
+                } else {
+                System.out.println("You can't steal this object, try taking it!");
+                }
+            } else {
+            System.out.println("You already have this object in your satchel... you can only have one!");
+            }
+        } else {
         System.out.println("There is no object to steal!!");
-    }
+        }
     }
 
     public static void drop(String object) {

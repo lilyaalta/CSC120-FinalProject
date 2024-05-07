@@ -19,6 +19,24 @@ public class Main {
                 if(inputString.contains("go")){
                     Map.playerGo(inputString, midievalRoom);
                 }
+                else if (midievalRoom[Map.trackCoordsX()][Map.trackCoordsY()] == "Sword") {
+                    if (inputString.contains("take")){
+                        if (inputString.contains("sword")){
+                            String object = "sword";
+                            User.take(object, midievalRoom);
+                        }
+                    }
+                }
+
+                else if (midievalRoom[Map.trackCoordsX()][Map.trackCoordsY()] == "Rope") {
+                    if (inputString.contains("take")){
+                        if (inputString.contains("rope")) {
+                            String object = "rope";
+                            User.take(object, midievalRoom);
+                        }
+                    }
+                }
+            
                 else if(inputString.contains("steal")){
                     if (inputString.contains("scroll")){
                         String object = "scroll";
@@ -30,46 +48,42 @@ public class Main {
                     }
                     
                 }
-                else if(inputString.contains("take")){
-                    if (inputString.contains("sword")){
-                        String object = "sword";
-                        User.take(object, midievalRoom);
-                    }
-                    else if (inputString.contains("rope")) {
-                        String object = "rope";
-                        User.take(object, midievalRoom);
-                    }
-                }
                 else if(inputString.contains("inventory")){
                     User.viewInventory();
                 }
+
                 else if(inputString.contains("drop")){
                     String object = inputString;
                     User.drop(object);
                 }
+
                 else if (inputString.contains("exit")) {
                     System.out.println("Exiting game. Goodbye!");
                     gameScanner.close();
                     break; // Exit the loop and end the game
                 }
-                else if (inputString.contains("fight")) {
-                    Character.knightFight();
+
+                else if (midievalRoom[Map.trackCoordsX()][Map.trackCoordsY()] == "Knight") {
+                    if (inputString.contains("fight")) {
+                        Character.knightFight();
+                    }
+                    else if (inputString.contains("talk")) {
+                        Character.knightTalk();
+                    }
                 }
-                else if (inputString.contains("talk")) {
-                    Character.knightTalk();
-                }
-                else if (inputString.contains("freak out")) {
-                    Character.paintingFight();
-                }
-                else if (inputString.contains("chat")) {
-                    Character.paintingChat();
-                }
-                else{
+                else if (midievalRoom[Map.trackCoordsX()][Map.trackCoordsY()] == "Painting") {
+                    if (inputString.contains("freak out")) {
+                        Character.paintingFight();
+                    }
+                    else if (inputString.contains("chat")) {
+                        Character.paintingChat();
+                    }
+                } else {
                     System.out.println("invalid input. PLease use a action along with direction or object ");
                 }
             }
-        if (Character.knightFight() || Character.knightTalk() || Character.paintingChat() || Character.paintingFight() ) {
-            
+        if (Character.knightFight() == false || Character.knightTalk() == false || Character.paintingChat() == false || Character.paintingFight() == false ) {
+            gameScanner.close();
         }
     }
 
