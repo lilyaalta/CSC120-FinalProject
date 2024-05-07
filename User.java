@@ -95,3 +95,44 @@ public class User {
         System.out.println("You currently have "+ satchel + " in your inventory");
     }
 }
+public static String helpUser(){
+    return """
+            Need some help?
+
+            If you're stuck on the map, heres what the map looks like:
+
+            Escape Museum Map:
+
+            You start at the door and face the rest of the map.
+
+            {"Door",  "Empty",  "Trap",  "Empty",   "Trap",     "Trap"}
+            {"Empty", "Empty",  "Rope",  "Empty",   "Painting", "Key" }
+            {"Trap",  "Empty",  "Empty", "Trap",    "Empty",    "Trap"}
+            {"Trap",  "Sword",  "Trap",  "Trap",    "Empty",    "Trap"}
+            {"Trap",  "Empty",  "Empty", "Empty",   "Empty",    "Trap"}
+            {"Empty", "Empty",  "Trap",  "Knight",  "Empty",    "Exit"}
+
+            You may want to steer clear of the Trap spaces!
+
+            The Knight and Painting are special characters you can interact with!
+
+            The objects like sword, rope, and key might be useful...
+
+            And the Exit is your way out!
+
+            Here are the commands in Escape the Museum:
+
+            - go + (forward, backward, left, right)
+            - take + (sword, rope)
+            - steal + (scroll, key, necklace)
+            - inventory
+            - drop + (necklace, scroll, sword, rope)
+            - exit
+            - fight
+            - talk
+            - freak out
+            - chat
+            - help
+
+            """;
+}

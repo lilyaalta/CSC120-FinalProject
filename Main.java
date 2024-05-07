@@ -17,7 +17,7 @@ public class Main {
          };
         Scanner gameScanner = new Scanner(System.in);  // I don't know why this is being mad
         System.out.println("Hello! Welcome to Escape the Museum! Where would you like to go?");
-        System.out.println("HINT: You can use the verb 'go' to move and specify the direction: forward, right, left, backward \n You start in the corner of the map! Enjoy!");
+        System.out.println("HINT: You can use the verb 'go' to move and specify the direction: forward, right, left, backward \n If you need more help, enter 'help me' for some assistance. \n You start in the corner of the map! Enjoy!");
         while(true) {
                 String inputString = gameScanner.nextLine().toLowerCase();
                 //if the input from the use has any of these commands, it will call certain methods
@@ -104,6 +104,9 @@ public class Main {
                     else if (inputString.contains("chat")) {
                         Character.paintingChat();
                     }
+                else if (inputString.contains("help")){
+                    User.helpUser();
+                }
                 } else {
                     System.out.println("invalid input. PLease use a action along with direction or object ");
                 }
