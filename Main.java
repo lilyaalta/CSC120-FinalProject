@@ -2,7 +2,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        /*this is the map of the game, the player starts 
+        at [0][0] and is supposed to find their way to "Exit" which is [5][5]
+        there are objects, charcters, or traps in certain parts of the map which
+        make the game
+*/
      String[][] midievalRoom = {
             {"Door",  "Empty",  "Trap",  "Empty",   "Trap",     "Trap"},
             {"Empty", "Empty",  "Rope",  "Empty",   "Painting", "Empty"},
@@ -14,10 +18,9 @@ public class Main {
         Scanner gameScanner = new Scanner(System.in);  // I don't know why this is being mad
         System.out.println("Hello! Welcome to Escape the Museum! Where would you like to go?");
         System.out.println("HINT: You can use the verb 'go' to move and specify the direction: forward, right, left, backward \n You start in the corner of the map! Enjoy!");
-// figure out how to loop this so that it keeps running!!
-// switch
         while(true) {
                 String inputString = gameScanner.nextLine().toLowerCase();
+                //if the input from the use has any of these commands, it will call certain methods
                 if(inputString.contains("go")){
                     Map.playerGo(inputString, midievalRoom);
                 }
