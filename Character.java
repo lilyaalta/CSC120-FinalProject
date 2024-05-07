@@ -22,7 +22,7 @@ public class Character {
                 System.out.println("Even though you have never fought with a sword before, you are a natural!");
                 System.out.println("You and the knight attack each other, ducking and swinging...");
                 System.out.println("... and you win!");
-                /System.out.println("Game Over!");
+                System.out.println("Game Over!");
                 return true;
             }
             System.out.println("You have never used a sword in your life and it shows... you lost!");
