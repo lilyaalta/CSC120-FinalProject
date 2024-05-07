@@ -12,7 +12,7 @@ public class User {
         // would normally say "Object"inventory
         if(room[Map.trackCoordsX()][Map.trackCoordsY()] == "Sword"){
             // if spot contains the object
-            if (object.equals("sword") || object.equals("Rope") || object.equals("Armor") || object.equals("Hammer") ) {
+            if (object.equals("sword") || object.equals("rope")) {
                 // if your inventory is empty
                 if (inventory.size() == 0) {
                     inventory.add(object);

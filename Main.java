@@ -1,12 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    //initializing objects
-    // strings which are sword, rope, hammer, armor
-    // strings key, scroll. 
-
     public static void main(String[] args) {
-         // where should these go
 
      String[][] midievalRoom = {
             {"Door",  "Empty",  "Trap",   "Empty",   "Trap",     "Trap"},
@@ -31,6 +26,10 @@ public class Main {
                         String object = "scroll";
                         User.steal(object, midievalRoom);
                     }
+                    else if (inputString.contains("necklace")) {
+                        String object = "necklace";
+                        User.steal(object, midievalRoom);
+                    }
                     
                 }
                 else if(inputString.contains("take")){
@@ -38,7 +37,10 @@ public class Main {
                         String object = "sword";
                         User.take(object, midievalRoom);
                     }
-                    //System.out.println("uh oh");
+                    else if (inputString.contains("rope")) {
+                        String object = "rope";
+                        User.take(object, midievalRoom);
+                    }
                 }
                 else if(inputString.contains("inventory")){
                     User.viewInventory();
@@ -52,12 +54,28 @@ public class Main {
                     gameScanner.close();
                     break; // Exit the loop and end the game
                 }
+                else if (inputString.contains("fight")) {
+                    Character.knightFight();
+                }
+                else if (inputString.contains("talk")) {
+                    Character.knightTalk();
+                }
+                else if (inputString.contains("freak out")) {
+                    Character.paintingFight();
+                }
+                else if (inputString.contains("chat")) {
+                    Character.paintingChat();
+                }
                 else{
                     System.out.println("invalid input. PLease use a action along with direction or object ");
-                }}
-
-        
+                }
+            }
+        if (Character.knightFight() || Character.knightTalk() || Character.paintingChat() || Character.paintingFight() ) {
+            
+        }
     }
+
+
 }
 
 
