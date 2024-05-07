@@ -11,12 +11,9 @@ public class User {
         // Modifying player position
 
     public static void take(String object, String[][] room) {
-<<<<<<< HEAD
-=======
         //if you are at the right location
         // would normally say "Object"inventory
         if(room[Map.trackCoordsX()][Map.trackCoordsY()] == "Sword"){
->>>>>>> 939df7e69696cce58d246d2ea32be5be67673531
             // if spot contains the object
             if (object.equals("sword") || object.equals("rope")) {
                 // if your inventory is empty
@@ -37,19 +34,12 @@ public class User {
     //Map.getSpot(room[0][0]);
 
     public static void steal(String object, String[][] room) {
-<<<<<<< HEAD
-=======
         // if the coordinates are right
         if (room[Map.trackCoordsX()][Map.trackCoordsY()] == "Object") {
->>>>>>> 939df7e69696cce58d246d2ea32be5be67673531
             // if there is not one already in the satchel
             if (!satchel.contains(object)) {
             // if the character is one of these 2 things
-<<<<<<< HEAD
-            if (object == "necklace" | object == "scroll") {
-=======
                 if (object == "Key" | object == "scroll") {
->>>>>>> 939df7e69696cce58d246d2ea32be5be67673531
                 satchel.add(object);
                 System.out.println("You have added " + object + " to your secret satchel");
             } 
