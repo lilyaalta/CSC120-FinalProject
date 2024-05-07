@@ -19,7 +19,7 @@ public class User {
         // would normally say "Object"inventory
         //if(room[y][x] == "Sword"){
             // if spot contains the object
-            if (object == "sword" | object == "Rope" | object == "Armor" | object == "Hammer" ) {
+            if (object.equals("sword") || object.equals("Rope") || object.equals("Armor") || object.equals("Hammer") ) {
                 // if your inventory is empty
                 if (inventory.size() == 0) {
                     inventory.add(object);

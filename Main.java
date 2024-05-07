@@ -14,24 +14,7 @@ public class Main {
             {"Trap", "Empty", "Empty", "Trap"},
             {"Empty", "Knight", "Empty", "Exit"},
          };
-        //  String[][] midievalRoom = {
-        //     {"Door", "Blocked", "Blocked", "Blocked"},
-        //     {"Empty", "Empty", "Object", "Blocked"},
-        //     {"Empty", "Empty", "Empty", "Blocked"},
-        //     {"Blocked", "Knight", "Empty", "Door"}
-        //  };
-     //  String[][] jewelryRoom = {
-    //     {"Door", "Blocked", "Blocked", "Blocked"},
-    //     {"Empty", "Hammer", "Empty", "Empty"},
-    //     {"Trap", "Empty", "Empty", "Rope"},
-    //     {"Blocked", "Blocked", "Blocked", "Door"}
-    // };
-    //  String[][] paintingRoom = {
-    //     {"Door",   "Character", "Blocked", "Trap"},
-    //     {"Empty",  "Trap",      "Rope",     "Trap"},
-    //     {"Empty",  "Empty",     "Empty",    "Sword"},
-    //     {"Hammer", "Empty",     "Trap",     "Door"}
-    // };
+        
         Scanner gameScanner = new Scanner(System.in);  // I don't know why this is being mad
         System.out.println("Hello! Welcome to Escape the Museum! Where would you like to go?");
         System.out.println("HINT: You can use the verb 'go' to move and specify the direction: forward, right, left, backward \n You start in the corner of the map! Enjoy!");
