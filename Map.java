@@ -108,14 +108,22 @@ public class Map {
                 System.out.println("Looks like you're at a door! If you wish to leave you can type quit, if not you should go another way.");
                 break;
             case "Knight":
-                System.out.println("Here is the knight! If you want to interact with the knight, type 'knight!'");
-                if (Character.knight() == false){
-                    System.out.println("You lost."); 
-                }
-                else if (Character.knight() == true){
-                    System.out.println("Keep going!");
-                }
+            //just added
+                System.out.println("You have bumped into a knight in shining armor!");
+                System.out.println("You notice that it seems to be moving on its own a little... but you go to steal its helmet....");
+                System.out.println("When it grabs your arm! Do you A) talk to it or B) fight? Type talk or fight into console");
+                // fix
+                //if (Character.knight() == false){
+                    //System.out.println("You lost."); 
+                //}
+                //else if (Character.knight() == true){
+                    //System.out.println("Keep going!");
+                //}
                 break;
+            case "Painting":
+                System.out.println("You have ran into a painting! It seems to be beconing you");
+                System.out.println("You hear a voice and decide to inspect it.");
+                System.out.println("It starts talking to you! Do you A) freak out, or B) chat with it? Type freak out or chat  into console.");
             case "Sword":
                 System.out.println("There's a sword! Do you want to take the sword? Use the action 'take' along with the object name to grab the object!");
                 break;
