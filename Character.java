@@ -22,6 +22,7 @@ public class Character {
                         System.out.println("The knight tells you: 'you know, I normally don't do this with intruders, but I'm gonna help you.' ");
                         System.out.println("Curious, you ask how. It says 'take this scroll. It might be worth money, who knows. I've been \nin the museum for too long and I'm bored. Steal it.'");
                         scanAnswers.close();
+                        return true;
                     } 
                     else {
                     System.out.println("'Sooo... hey,' you say to the suit of armor. 'Come here often?'");
@@ -32,6 +33,8 @@ public class Character {
                 } else {
                 System.out.println("Before you can even get a word out, the suit of armor grabs his sword and stabs you,");
                 System.out.println("This was not a friendly suit of armor, apparently. maybe don't try to talk to it...");
+                scanAnswers.close();
+                return false;
                 }
             }
             else if (userAns.contains("fight")) {

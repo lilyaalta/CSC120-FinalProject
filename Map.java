@@ -109,8 +109,11 @@ public class Map {
                 break;
             case "Knight":
                 System.out.println("Here is the knight! If you want to interact with the knight, type 'knight!'");
-                if (Character.knight()== false){
+                if (Character.knight() == false){
                     System.out.println("You lost."); 
+                }
+                else if (Character.knight() == true){
+                    System.out.println("Keep going!");
                 }
                 break;
             case "Sword":
