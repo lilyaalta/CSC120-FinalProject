@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
 
      String[][] midievalRoom = {
-            {"Door", "Empty", "Trap", "Empty"},
-            {"Empty", "Empty", "Sword", "Empty"},
-            {"Trap", "Empty", "Empty", "Trap"},
+            {"Door",  "Empty",  "Trap",  "Empty"},
+            {"Empty", "Empty",  "Sword", "Empty"},
+            {"Trap",  "Empty",  "Empty", "Trap"},
             {"Empty", "Knight", "Empty", "Exit"},
          };
         Scanner gameScanner = new Scanner(System.in);  // I don't know why this is being mad
@@ -75,7 +75,6 @@ public class Main {
 
 
 }
-// System.out.println("Goodbye!");
 
 
 

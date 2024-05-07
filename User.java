@@ -7,43 +7,63 @@ import javax.sound.sampled.SourceDataLine;
 public class User {
     static ArrayList<String> inventory = new ArrayList<String>();
     static ArrayList<String> satchel = new ArrayList<String>();
-    public static int x = Map.getPlayerPosx();
-    public static int y = Map.getPlayerPosy();
 
         // Modifying player position
-    // Map.setPlayerPosx(x + 1);
-    // Map.setPlayerPosy(y - 1);
 
     public static void take(String object, String[][] room) {
+<<<<<<< HEAD
+=======
+        //if you are at the right location
+        // would normally say "Object"inventory
+        if(room[Map.trackCoordsX()][Map.trackCoordsY()] == "Sword"){
+>>>>>>> 939df7e69696cce58d246d2ea32be5be67673531
             // if spot contains the object
             if (object.equals("sword") || object.equals("rope")) {
                 // if your inventory is empty
                 if (inventory.size() == 0) {
                     inventory.add(object);
                     System.out.println("you have added " + object + " to your inventory!");
-                } else {
+                } 
+                else {
                     System.out.println("You already have an object in your inventory... you can only have one!");
                 }
-            } else {
-                System.out.println("There is currently nothing to take!");
             } 
+        }
+        else{
+                System.out.println("There is currently nothing to take!");
+            }      
     }
 
     //Map.getSpot(room[0][0]);
 
     public static void steal(String object, String[][] room) {
+<<<<<<< HEAD
+=======
+        // if the coordinates are right
+        if (room[Map.trackCoordsX()][Map.trackCoordsY()] == "Object") {
+>>>>>>> 939df7e69696cce58d246d2ea32be5be67673531
             // if there is not one already in the satchel
-        if (!satchel.contains(object)) {
+            if (!satchel.contains(object)) {
             // if the character is one of these 2 things
+<<<<<<< HEAD
             if (object == "necklace" | object == "scroll") {
+=======
+                if (object == "Key" | object == "scroll") {
+>>>>>>> 939df7e69696cce58d246d2ea32be5be67673531
                 satchel.add(object);
                 System.out.println("You have added " + object + " to your secret satchel");
-            } else {
+            } 
+                else {
                 System.out.println("You can't steal this object, try taking it!");
             }
-        } else {
+        } 
+        else {
             System.out.println("You already have this object in your satchel... you can only have one!");
         }
+    }
+    else{
+        System.out.println("There is no object to steal!!");
+    }
     }
 
     public static void drop(String object) {

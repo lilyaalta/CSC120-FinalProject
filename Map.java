@@ -4,28 +4,28 @@ public class Map {
     private static int playerPosx = 0;
     private static int playerPosy = 0;
 
-    public static int getPlayerPosx() {
-        return playerPosx;
-    }
+    // public static int getPlayerPosx() {
+    //     return playerPosx;
+    // }
 
-    public static int getPlayerPosy() {
-        return playerPosy;
-    }
+    // public static int getPlayerPosy() {
+    //     return playerPosy;
+    // }
 
-    public static void setPlayerPosx(int newPosx) {
-        playerPosx = newPosx;
-    }
+    // public static void setPlayerPosx(int newPosx) {
+    //     playerPosx = newPosx;
+    // }
 
-    public static void setPlayerPosy(int newPosy) {
-        playerPosy = newPosy;
-    }
+    // public static void setPlayerPosy(int newPosy) {
+    //     playerPosy = newPosy;
+    // }
 
     // playerPosx = 0;
     // playerPosy = 0;
     
     public static boolean getSpot(String[][] place) {
         // Check if coordinates are within the map bounds
-        if (playerPosx > (-1) & playerPosx < 3 || playerPosy > (-1) & playerPosy < 3) {
+        if (playerPosx > (-1) & playerPosx < (place.length - 1) || playerPosy > (-1) & playerPosy < (place[0].length - 1)) {
             return true;
         } 
         else {
@@ -108,6 +108,7 @@ public class Map {
                 System.out.println("Looks like you're at a door! If you wish to leave you can type quit, if not you should go another way.");
                 break;
             case "Knight":
+<<<<<<< HEAD
             //just added
                 System.out.println("You have bumped into a knight in shining armor!");
                 System.out.println("You notice that it seems to be moving on its own a little... but you go to steal its helmet....");
@@ -119,6 +120,16 @@ public class Map {
                 //else if (Character.knight() == true){
                     //System.out.println("Keep going!");
                 //}
+=======
+                System.out.println("Here is the knight! If you want to interact with the knight, type 'knight!'");
+                if (Character.knight() == false){
+                    System.out.println("You lost."); 
+                }
+                else if (Character.knight() == true){
+                    System.out.println("Keep going!");
+                    
+                }
+>>>>>>> 939df7e69696cce58d246d2ea32be5be67673531
                 break;
             case "Painting":
                 System.out.println("You have ran into a painting! It seems to be beconing you");
@@ -131,5 +142,11 @@ public class Map {
                 System.out.println("You have escaped the museum!!! CONGRATS!!!");
                 break;
         }      
-    }      
+    }  
+    public static int trackCoordsX(){
+        return playerPosx;
+    }    
+    public static int trackCoordsY(){
+        return playerPosy;
+    }
 }
