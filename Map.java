@@ -93,32 +93,34 @@ public class Map {
                 System.out.println("Looks like you're at a door! If you wish to leave you can type quit, if not you should go another way.");
                 break;
             case "Knight":
-            //just added
                 System.out.println("You have bumped into a knight in shining armor!");
                 System.out.println("You notice that it seems to be moving on its own a little... but you go to steal its helmet....");
                 System.out.println("When it grabs your arm! Do you A) talk to it or B) fight? Type talk or fight into console");
-                // fix
-                //if (Character.knight() == false){
-                    //System.out.println("You lost."); 
-                //}
-                //else if (Character.knight() == true){
-                    //System.out.println("Keep going!");
-                //}
                 break;
             case "Painting":
                 System.out.println("You have ran into a painting! It seems to be beconing you");
                 System.out.println("You hear a voice and decide to inspect it.");
                 System.out.println("It starts talking to you! Do you A) freak out, or B) chat with it? Type freak out or chat  into console.");
+                break;
             case "Sword":
                 System.out.println("There's a sword! Do you want to take the sword? Use the action 'take' along with the object name to grab the object!");
                 break;
             case "Exit":
-                System.out.println("You have escaped the museum!!! CONGRATS!!!");
-                System.out.println("You have escaped with" + User.inventory + "as your weapons and" + User.satchel + "in your satchel.");
+                    if (User.satchel.contains("key")) {
+                        System.out.println("You have escaped the museum!!! CONGRATS!!!");
+                        System.out.println("You have escaped with" + User.inventory + " as your weapon and" + User.satchel + "in your satchel.");
+                    } else {
+                        System.out.println("You need to find the key to escape, you are reset to square one!");
+                        playerPosx = 0;
+                        playerPosy = 0;
+                break;
+                    }
                 break;
             case "Rope":
-            System.out.println("There's a rope! Do you want to take the rope? Use the action 'take' along with the object name to grab the object!");
-        }      
+                System.out.println("There's a rope! Do you want to take the rope? Use the action 'take' along with the object name to grab the object!");
+            case "key":
+                System.out.println("Here is the key! Add this to your satchel by stealing this so you can leave!");
+        }
     }  
     public static int trackCoordsX(){
         return playerPosx;

@@ -9,7 +9,7 @@ public class Main {
 */
      String[][] midievalRoom = {
             {"Door",  "Empty",  "Trap",  "Empty",   "Trap",     "Trap"},
-            {"Empty", "Empty",  "Rope",  "Empty",   "Painting", "Empty"},
+            {"Empty", "Empty",  "Rope",  "Empty",   "Painting", "Key" },
             {"Trap",  "Empty",  "Empty", "Trap",    "Empty",    "Trap"},
             {"Trap",  "Sword",  "Trap",  "Trap",    "Empty",    "Trap"},
             {"Trap",  "Empty",  "Empty", "Empty",   "Empty",    "Trap"},
@@ -48,6 +48,10 @@ public class Main {
                 else if(inputString.contains("steal")){
                     if (inputString.contains("scroll")){
                         String object = "scroll";
+                        User.steal(object, midievalRoom);
+                    }
+                    else if (inputString.contains("key")){
+                        String object = "key";
                         User.steal(object, midievalRoom);
                     }
                     else if (inputString.contains("necklace")) {
