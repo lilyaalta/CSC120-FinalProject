@@ -37,6 +37,7 @@ public class Main {
         System.out.println("HINT: You can use the verb 'go' to move and specify the direction: forward, right, left, backward");
         System.out.println("WARNING: Do not move more than 3 steps in a row!");
 // figure out how to loop this so that it keeps running!!
+// switch
         while(true) {
             String inputString = gameScanner.nextLine().toLowerCase();
             if(inputString.contains("knight")){

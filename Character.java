@@ -5,7 +5,7 @@ public class Character {
     
     private int characterLocation;
     ArrayList<String> numberList = new ArrayList<String>();
-    static Scanner scanAnswers = new Scanner(System.in);
+    //static Scanner scanAnswers = new Scanner(System.in);
     Random rand = new Random();
 
     // when a character is at the spot where the knight is
@@ -13,7 +13,7 @@ public class Character {
         System.out.println("You have bumped into a knight in shining armor!");
         System.out.println("You notice that it seems to be moving on its own a little... but you go to steal its helmet....");
         System.out.println("When it grabs your arm! Do you A) talk to it or B) fight? Type talk or fight into console");
-        String userAns = scanAnswers.nextLine().toLowerCase();
+        //String userAns = scanAnswers.nextLine().toLowerCase();
         if (userAns.contains("talk")){
             if (chanceOfSurvival(1) == true) {
                 if (chanceOfSurvival(3)== true) {
