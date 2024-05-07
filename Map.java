@@ -3,61 +3,31 @@ public class Map {
 
     private static int playerPosx = 0;
     private static int playerPosy = 0;
-
-    // public static int getPlayerPosx() {
-    //     return playerPosx;
-    // }
-
-    // public static int getPlayerPosy() {
-    //     return playerPosy;
-    // }
-
-    // public static void setPlayerPosx(int newPosx) {
-    //     playerPosx = newPosx;
-    // }
-
-    // public static void setPlayerPosy(int newPosy) {
-    //     playerPosy = newPosy;
-    // }
-
-    // playerPosx = 0;
-    // playerPosy = 0;
     
     public static boolean getSpot(String[][] place) {
         // Check if coordinates are within the map bounds
-        if (playerPosx > (-1) & playerPosx < (place.length - 1) || playerPosy > (-1) & playerPosy < (place[0].length - 1)) {
+        if (playerPosx >= 0 & playerPosx < (place.length - 1) || playerPosy >= 0 & playerPosy < (place[0].length - 1)) {
             return true;
         } 
         else {
              return false;
             }
     }
-    /*/
-    how do I get this to pin point the specific coordinates and then 
-    have it read whatever is in the coordinates
-     */
 
     public static void playerGo(String direction, String[][] room){
-        if(getSpot(room) == true){
+        if(getSpot(room)){
             if(direction.contains("left")){
                 if(playerPosy++ < (room.length -1)){
                     playerPosy = playerPosy++;
                     checkRoom(playerPosx, playerPosy, room);
                 }
-                else {
-                    System.out.println("You fell off the map!");
-                    System.out.println("Y  = " + playerPosy + " Y =" + playerPosx);
-                }
         }
             else if(direction.contains("right")){
-                if(playerPosy-- > -1){
+                if(playerPosy-- > 0){
                     playerPosy = playerPosy--;
                     checkRoom(playerPosx, playerPosy, room);
                 }
-                    else {
-                        System.out.println("You fell off the map!");
-                        System.out.println("Y  = " + playerPosy + " Y =" + playerPosx);
-                    }
+
         }
             else if(direction.contains("forward")){
                 if(playerPosx++ <= (room.length -1)){
@@ -68,20 +38,16 @@ public class Map {
                 
         }
             else if(direction.contains("backward")){
-                if(playerPosx-- < -1){
+                if(playerPosx-- < 0){
                     playerPosx = playerPosx--;
                     checkRoom(playerPosx, playerPosy, room);
                 }
-                    else {
-                        System.out.println("You fell off the map!");
-                        System.out.println("Y  = " + playerPosy + " Y =" + playerPosx);
-                    }
                 }
             else{
                 System.out.println("Invalid direction. Please try again.");
             }
-            }
-        else if(getSpot(room) == false){
+        }
+        else{
             System.out.println("You fell off the map! Time to start over:( Your coordinates are back to the start.");
             playerPosx = 0;
             playerPosy = 0;

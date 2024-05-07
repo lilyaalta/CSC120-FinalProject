@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 
-import javax.sound.sampled.SourceDataLine;
-
-// initialize in main for objects and coordinates and anything that will be used across files
 
 public class User {
     static ArrayList<String> inventory = new ArrayList<String>();
@@ -39,7 +36,7 @@ public class User {
             // if there is not one already in the satchel
             if (!satchel.contains(object)) {
             // if the character is one of these 2 things
-                if (object == "Key" | object == "scroll") {
+                if (object == "Key" || object == "scroll") {
                 satchel.add(object);
                 System.out.println("You have added " + object + " to your secret satchel");
             } 
