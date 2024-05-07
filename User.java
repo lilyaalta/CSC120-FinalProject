@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 
-import javax.sound.sampled.SourceDataLine;
-
-// initialize in main for objects and coordinates and anything that will be used across files
 
 public class User {
     static ArrayList<String> inventory = new ArrayList<String>();

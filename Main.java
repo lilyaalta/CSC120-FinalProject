@@ -4,10 +4,12 @@ public class Main {
     public static void main(String[] args) {
 
      String[][] midievalRoom = {
-            {"Door",  "Empty",  "Trap",  "Empty"},
-            {"Empty", "Empty",  "Sword", "Empty"},
-            {"Trap",  "Empty",  "Empty", "Trap"},
-            {"Empty", "Knight", "Empty", "Exit"},
+            {"Door",  "Empty",  "Trap",   "Empty",   "Trap",     "Trap"},
+            {"Empty", "Empty",  "Sword",  "Empty",   "Painting", "Empty"},
+            {"Trap",  "Empty",  "Empty",  "Trap",    "Empty",    "Trap"},
+            {"Trap",  "Rope",   "Trap",   "Trap",    "Empty",    "Trap"},
+            {"Trap",  "Empty",  "Empty",  "Empty",    "Empty",    "Trap"},
+            {"Empty", "Empty",   "Trap",  "Knight",  "Empty",    "Exit"},
          };
         Scanner gameScanner = new Scanner(System.in);  // I don't know why this is being mad
         System.out.println("Hello! Welcome to Escape the Museum! Where would you like to go?");
