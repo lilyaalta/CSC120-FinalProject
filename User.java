@@ -9,48 +9,72 @@ public class User {
 
     public static void take(String object, String[][] room) {
         //if you are at the right location
-        // would normally say "Object"inventory
         if(room[Map.trackCoordsX()][Map.trackCoordsY()] == "Sword"){
             // if spot contains the object
-            if (object.equals("sword") || object.equals("rope")) {
+            if (object.equals("sword")) {
                 // if your inventory is empty
                 if (inventory.size() == 0) {
                     inventory.add(object);
                     System.out.println("you have added " + object + " to your inventory!");
-                } 
-                else {
+                } else {
                     System.out.println("You already have an object in your inventory... you can only have one!");
                 }
-            } 
-        }
-        else{
-                System.out.println("There is currently nothing to take!");
-            }      
+            } else {
+                System.out.println("This object is not to take! Try stealing it?");
+            }
+        } 
+        else if(room[Map.trackCoordsX()][Map.trackCoordsY()] == "Rope"){
+            // if spot contains the object
+            if (object.equals("rope")) {
+                // if your inventory is empty
+                if (inventory.size() == 0) {
+                    inventory.add(object);
+                    System.out.println("you have added " + object + " to your inventory!");
+                } else {
+                    System.out.println("You already have an object in your inventory... you can only have one!");
+                }
+            } else {
+                System.out.println("This object is not to take! Try stealing it?");
+            }
+        } else {
+            System.out.println("There is currently nothing to take!");
+        }      
     }
 
     //Map.getSpot(room[0][0]);
 
     public static void steal(String object, String[][] room) {
         // if the coordinates are right
-        if (room[Map.trackCoordsX()][Map.trackCoordsY()] == "Object") {
+        if (room[Map.trackCoordsX()][Map.trackCoordsY()] == "Knight") {
             // if there is not one already in the satchel
             if (!satchel.contains(object)) {
             // if the character is one of these 2 things
-                if (object == "Key" || object == "scroll") {
-                satchel.add(object);
-                System.out.println("You have added " + object + " to your secret satchel");
-            } 
-                else {
-                System.out.println("You can't steal this object, try taking it!");
-            }
-        } 
-        else {
+                if (object == "scroll") {
+                    satchel.add(object);
+                    System.out.println("You have added " + object + " to your secret satchel");
+                } else {
+                    System.out.println("You can't steal this object, try taking it!");
+                }
+            } else {
             System.out.println("You already have this object in your satchel... you can only have one!");
+            }
         }
-    }
-    else{
+        else if (room[Map.trackCoordsX()][Map.trackCoordsY()] == "Painting") {
+        // if there is not one already in the satchel
+            if (!satchel.contains(object)) {
+        // if the character is one of these 2 things
+                if (object == "necklace") {
+                    satchel.add(object);
+                    System.out.println("You have added " + object + " to your secret satchel");
+                } else {
+                System.out.println("You can't steal this object, try taking it!");
+                }
+            } else {
+            System.out.println("You already have this object in your satchel... you can only have one!");
+            }
+        } else {
         System.out.println("There is no object to steal!!");
-    }
+        }
     }
 
     public static void drop(String object) {

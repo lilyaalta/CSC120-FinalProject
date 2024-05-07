@@ -11,11 +11,10 @@ public class Character {
         if (User.inventory.contains("rope")) {
             if(chanceOfSurvival(1) == true) {
                 System.out.println("You toss the rope cowboy-style at the franken-suit and its rusty screws crumble. The suit falls apart! Congrats!");
-                gameScanner.close();
                 return true;
             }
             System.out.println("That knight knew what you were trying to do, and grabbed the rope. You lose!");
-            scanAnswers.close();
+            System.out.println("Game Over!");
             return false;
         }
         else if (User.inventory.contains("sword")) {
@@ -23,16 +22,16 @@ public class Character {
                 System.out.println("Even though you have never fought with a sword before, you are a natural!");
                 System.out.println("You and the knight attack each other, ducking and swinging...");
                 System.out.println("... and you win!");
-                scanAnswers.close();
+                System.out.println("Game Over!");
                 return true;
             }
             System.out.println("You have never used a sword in your life and it shows... you lost!");
-            scanAnswers.close();
+            System.out.println("Game Over!");
             return false;
         }
         System.out.println("Since you have no weapons, you bravely decide to go up against the suit...by running");
         System.out.println("And you bravely get caught.");
-        scanAnswers.close();
+        System.out.println("Game Over!");
         return false;
     }  
 
@@ -45,14 +44,14 @@ public class Character {
             } 
             else {
             System.out.println("'Sooo... hey,' you say to the suit of armor. 'Come here often?'");
-            System.out.println("The knight is taken aback by your audacity and yells for security. You are arrested");
-            scanAnswers.close();
+            System.out.println("The knight is taken aback by your audacity and yells for security. You are arrested.");
+            System.out.println("Game Over!");
             return false;
             }
         } else {
         System.out.println("Before you can even get a word out, the suit of armor grabs his sword and stabs you,");
-        System.out.println("This was not a friendly suit of armor, apparently. maybe don't try to talk to it...");
-        scanAnswers.close();
+        System.out.println("This was not a friendly suit of armor, apparently. Maybe don't try to talk to it...");
+        System.out.println("Game Over!");
         return false;
         }
     }
@@ -64,7 +63,7 @@ public class Character {
                     return true;
             }
             System.out.println("Why would you even try to attack a painting with a rope. You are arrested and made fun of on twitter.");
-            scanAnswers.close();
+            System.out.println("Game Over!");
             return false;
         }
         if (User.inventory.contains("sword")) {
@@ -74,7 +73,7 @@ public class Character {
                 return true;
             }
             System.out.println("You are caught trying to slice up a painting and arrested.");
-            scanAnswers.close();
+            System.out.println("Game Over!");
             return false;
         }
         //else you try to fistfight
@@ -98,11 +97,11 @@ public class Character {
             }
             System.out.println("'NO' It screams, alerting the gaurds.");
             System.out.println("You are arrested :( )");
-            scanAnswers.close();
+            System.out.println("Game Over!");
             return false;
         }
         System.out.println("You are arrested.");
-        scanAnswers.close();
+        System.out.println("Game Over!");
         return false;
     }
 
