@@ -103,11 +103,12 @@ public class Main {
                     }
                     else if (inputString.contains("chat")) {
                         Character.paintingChat();
-                    }
+                    }        
+                } 
                 else if (inputString.contains("help")){
-                    User.helpUser();
+                    System.out.println(User.helpUser());
                 }
-                } else {
+                else {
                     System.out.println("invalid input. PLease use a action along with direction or object ");
                 }
             }

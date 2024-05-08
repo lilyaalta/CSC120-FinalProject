@@ -94,7 +94,7 @@ public class User {
         System.out.println("You currently have "+ inventory + " in your inventory");
         System.out.println("You currently have "+ satchel + " in your inventory");
     }
-}
+
 public static String helpUser(){
     return """
             Need some help?
@@ -135,4 +135,5 @@ public static String helpUser(){
             - help
 
             """;
+}
 }
