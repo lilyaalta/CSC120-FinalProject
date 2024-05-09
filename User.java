@@ -118,46 +118,34 @@ public class User {
  * The helpUser() prints out a cheatsheet in case the player needs help getting around the map.
  * @returns String
  */
-public static String helpUser(){
-    return ("""
-            Need some help?
+public static void helpUser(){
+    System.out.println("Need some help?");
+    System.out.println("If you're stuck on the map, heres what the map looks like:");
+    System.out.println("Escape Museum Map:");
+    System.out.println("You start at the door and face the rest of the map.");
+    System.out.println("{Door,  Empty,  Trap,  Empty,   Trap,     Trap}");
+    System.out.println("{Empty, Empty,  Rope,  Empty,   Painting, Key }");
+    System.out.println("{Trap,  Empty,  Empty, Trap,    Empty,    Trap}");
+    System.out.println("{Trap,  Sword,  Trap,  Trap,    Empty,    Trap}");
+    System.out.println("{Trap,  Empty,  Empty, Empty,   Empty,    Trap}");
+    System.out.println("{Empty, Empty,  Trap,  Knight,  Empty,    Exit}");
+    System.out.println("You may want to steer clear of the Trap spaces!");
+    System.out.println("The Knight and Painting are special characters you can interact with!");
+    System.out.println("The objects like sword, rope, and key might be useful...");
+    System.out.println("And the Exit is your way out!");
+    System.out.println("Here are the commands in Escape the Museum:");
+    System.out.println("- go + (forward, backward, left, right)");
+    System.out.println("- take + (sword, rope)");
+    System.out.println("- steal + (scroll, key, necklace)");
+    System.out.println("- inventory");
+    System.out.println("- drop + (necklace, scroll, sword, rope)");
+    System.out.println("- exit");
+    System.out.println("- fight");
+    System.out.println("- talk");
+    System.out.println("- freak out");
+    System.out.println("- chat");
+    System.out.println("- help");
 
-            If you're stuck on the map, heres what the map looks like:
-
-            Escape Museum Map:
-
-            You start at the door and face the rest of the map.
-
-            {"Door",  "Empty",  "Trap",  "Empty",   "Trap",     "Trap"}
-            {"Empty", "Empty",  "Rope",  "Empty",   "Painting", "Key" }
-            {"Trap",  "Empty",  "Empty", "Trap",    "Empty",    "Trap"}
-            {"Trap",  "Sword",  "Trap",  "Trap",    "Empty",    "Trap"}
-            {"Trap",  "Empty",  "Empty", "Empty",   "Empty",    "Trap"}
-            {"Empty", "Empty",  "Trap",  "Knight",  "Empty",    "Exit"}
-
-            You may want to steer clear of the Trap spaces!
-
-            The Knight and Painting are special characters you can interact with!
-
-            The objects like sword, rope, and key might be useful...
-
-            And the Exit is your way out!
-
-            Here are the commands in Escape the Museum:
-
-            - go + (forward, backward, left, right)
-            - take + (sword, rope)
-            - steal + (scroll, key, necklace)
-            - inventory
-            - drop + (necklace, scroll, sword, rope)
-            - exit
-            - fight
-            - talk
-            - freak out
-            - chat
-            - help
-
-            """;
-    )
 }
+
 }

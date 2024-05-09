@@ -118,7 +118,7 @@ public class Main {
                 }
                 // if user needs a little help
                 else if (inputString.contains("help")){
-                    System.out.println(User.helpUser());
+                    User.helpUser();
                 }
                 // anything else...
                 else {
