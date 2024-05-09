@@ -21,6 +21,13 @@ Note:  It's a good idea to also make this list available inside the game, in res
 
 If your game includes challenges that must be overcome to win, also list them below.
     - Map
+            {"Door",  "Empty",  "Trap",  "Empty",   "Trap",     "Trap"}
+            {"Empty", "Empty",  "Rope",  "Empty",   "Painting", "Key" }
+            {"Trap",  "Empty",  "Empty", "Trap",    "Empty",    "Trap"}
+            {"Trap",  "Sword",  "Trap",  "Trap",    "Empty",    "Trap"}
+            {"Trap",  "Empty",  "Empty", "Empty",   "Empty",    "Trap"}
+            {"Empty", "Empty",  "Trap",  "Knight",  "Empty",    "Exit"}
+            
         You must not go too far or you'll fall off the map and start back at the door!
     - Trap
         One of the challenges you must overcome are the Trap spaces. The design of the game is made that you memorize how to get from the door to the exit, or other places. You must remember where the trap spaces are or else you will keep falling back to the start.

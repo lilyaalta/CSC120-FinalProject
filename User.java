@@ -96,6 +96,12 @@ public class User {
     }
 
 public static String helpUser(){
+
+/*
+ * The helpUser() prints out a cheatsheet in case the player needs help 
+ * getting around the map.
+ * returns String
+ */
     return """
             Need some help?
 

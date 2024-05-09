@@ -74,15 +74,18 @@ public class Map {
 
     public static void checkRoom(int x, int y, String[][] map) {
         /*
+        checkRoom() directs the game to printed statement based on the keyword 
+        of the map from the coordinates
+        int x coordinate for which row the player is in
+        int y coordinate for which place in the row the player is in
+        String[][] map midieval map
          * 
          */
-        switch (map[x][y]) {
-            case "Blocked":
-            System.out.println("Sorry, this space is blocked, try moving somewhere else!");
-                break;
+        switch (map[x][y]) { // using switch case in order to check if the location of the map has any of the following Strings
             case "Empty":
                 System.out.println("This space is empty, keep going!");
                 break;
+                // The trap brings the player back to the beginning by resetting the coordinates
             case "Trap":
                 System.out.println("Oh no! It's a trap. You just reset in the game. Back to square one!");
                 playerPosx = 0;
@@ -92,19 +95,23 @@ public class Map {
             case "Door":
                 System.out.println("Looks like you're at a door! If you wish to leave you can type quit, if not you should go another way.");
                 break;
+                // the Knight space starts the storyline of the knight
             case "Knight":
                 System.out.println("You have bumped into a knight in shining armor!");
                 System.out.println("You notice that it seems to be moving on its own a little... but you go to steal its helmet....");
                 System.out.println("When it grabs your arm! Do you A) talk to it or B) fight? Type talk or fight into console");
                 break;
+                // the painting space starts the storyline of the painting 
             case "Painting":
                 System.out.println("You have ran into a painting! It seems to be beconing you");
                 System.out.println("You hear a voice and decide to inspect it.");
                 System.out.println("It starts talking to you! Do you A) freak out, or B) chat with it? Type freak out or chat  into console.");
                 break;
+                // sword lets you know where the sword is
             case "Sword":
                 System.out.println("There's a sword! Do you want to take the sword? Use the action 'take' along with the object name to grab the object!");
                 break;
+                // exit space is the end of the game depending on if you have the key or not
             case "Exit":
                     if (User.satchel.contains("key")) {
                         System.out.println("You have escaped the museum!!! CONGRATS!!!");
@@ -122,6 +129,9 @@ public class Map {
                 System.out.println("Here is the key! Add this to your satchel by stealing this so you can leave!");
         }
     }  
+
+    // these methods track the player's positions 
+    // they  return x and y
     public static int trackCoordsX(){
         return playerPosx;
     }    

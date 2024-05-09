@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.ArrayList;
 public class Character {
     
-    // private int characterLocation;
+    
     ArrayList<String> numberList = new ArrayList<String>();
     static Random rand = new Random();
 

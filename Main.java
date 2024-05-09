@@ -7,6 +7,7 @@ public class Main {
         there are objects, charcters, or traps in certain parts of the map which
         make the game
 */
+// Map of the game
      String[][] midievalRoom = {
             {"Door",  "Empty",  "Trap",  "Empty",   "Trap",     "Trap"},
             {"Empty", "Empty",  "Rope",  "Empty",   "Painting", "Key" },
@@ -19,6 +20,7 @@ public class Main {
         System.out.println("Hello! Welcome to Escape the Museum! Where would you like to go?");
         System.out.println("HINT: You can use the verb 'go' to move and specify the direction: forward, right, left, backward \n If you need more help, enter 'help me' for some assistance. \n You start in the corner of the map! Enjoy!");
         while(true) {
+            // while the scanner is open
                 String inputString = gameScanner.nextLine().toLowerCase();
                 //if the input from the use has any of these commands, it will call certain methods
                 if(inputString.contains("go")){
