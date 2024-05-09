@@ -1,12 +1,18 @@
 import java.util.ArrayList;
 
-
 public class User {
+    // The inventory houses weapons, you can only hold one wespon at a time
     static ArrayList<String> inventory = new ArrayList<String>();
+    // satchel houses stolen objects such as the scroll, key, and necklace
     static ArrayList<String> satchel = new ArrayList<String>();
 
-        // Modifying player position
-
+/**
+ * Allows the user to take a weapon and store it in their inventory so as long as they don't have an object stored and they are
+ * at the right coordinate.
+ * 
+ * @param object the object that the user wants to add to their inventory
+ * @param room the room the user is in
+ */
     public static void take(String object, String[][] room) {
         //if you are at the right location
         if(room[Map.trackCoordsX()][Map.trackCoordsY()] == "Sword"){
@@ -41,8 +47,13 @@ public class User {
         }      
     }
 
-    //Map.getSpot(room[0][0]);
-
+/**
+ * Allows the user to steal an object and store it in their satchel if they are at the right coordinates and if they have interacted with the
+ * proper characters
+ * 
+ * @param object the object that the user wants to steal
+ * @param room the room the user is in
+ */
     public static void steal(String object, String[][] room) {
         // if the coordinates are right
         if (room[Map.trackCoordsX()][Map.trackCoordsY()] == "Knight") {
@@ -77,6 +88,11 @@ public class User {
         }
     }
 
+/**
+ * Allows the user to drop any specified object from either satchel or inventory
+ * 
+ * @param object the object that the user wants to remove
+ */
     public static void drop(String object) {
         if (inventory.contains(object)) {
             inventory.remove(object);
@@ -90,19 +106,20 @@ public class User {
         }
     }
 
+/**
+* Allows user to see what their inventory is within the satchel and inventory
+*/
     public static void viewInventory() {
         System.out.println("You currently have "+ inventory + " in your inventory");
         System.out.println("You currently have "+ satchel + " in your inventory");
     }
 
-public static String helpUser(){
-
-/*
- * The helpUser() prints out a cheatsheet in case the player needs help 
- * getting around the map.
- * returns String
+/**
+ * The helpUser() prints out a cheatsheet in case the player needs help getting around the map.
+ * @returns String
  */
-    return """
+public static String helpUser(){
+    return ("""
             Need some help?
 
             If you're stuck on the map, heres what the map looks like:
@@ -141,5 +158,6 @@ public static String helpUser(){
             - help
 
             """;
+    )
 }
 }

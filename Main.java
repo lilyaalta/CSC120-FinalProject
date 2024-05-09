@@ -1,13 +1,18 @@
 import java.util.Scanner;
 
 public class Main {
+/**
+ * The main method which houses the map and scanner interactions
+ * @param args
+ */
     public static void main(String[] args) {
         /*this is the map of the game, the player starts 
         at [0][0] and is supposed to find their way to "Exit" which is [5][5]
         there are objects, charcters, or traps in certain parts of the map which
         make the game
-*/
-// Map of the game
+        */
+
+// Map of the game, 6x6 room
      String[][] midievalRoom = {
             {"Door",  "Empty",  "Trap",  "Empty",   "Trap",     "Trap"},
             {"Empty", "Empty",  "Rope",  "Empty",   "Painting", "Key" },
@@ -16,7 +21,8 @@ public class Main {
             {"Trap",  "Empty",  "Empty", "Empty",   "Empty",    "Trap"},
             {"Empty", "Empty",  "Trap",  "Knight",  "Empty",    "Exit"},
          };
-        Scanner gameScanner = new Scanner(System.in);  // I don't know why this is being mad
+        // scanner for whole game
+        Scanner gameScanner = new Scanner(System.in);
         System.out.println("Hello! Welcome to Escape the Museum! Where would you like to go?");
         System.out.println("HINT: You can use the verb 'go' to move and specify the direction: forward, right, left, backward \n If you need more help, enter 'help me' for some assistance. \n You start in the corner of the map! Enjoy!");
         while(true) {
@@ -26,6 +32,7 @@ public class Main {
                 if(inputString.contains("go")){
                     Map.playerGo(inputString, midievalRoom);
                 }
+                // if the user is at the space "Sword" and they want to take it, they can
                 else if (midievalRoom[Map.trackCoordsX()][Map.trackCoordsY()] == "Sword") {
                     if (inputString.contains("take")){
                         if (inputString.contains("sword")){
@@ -37,7 +44,7 @@ public class Main {
                         User.viewInventory();
                     }
                 }
-
+                // if the user is at the space "Rope" and they want to take it, they can
                 else if (midievalRoom[Map.trackCoordsX()][Map.trackCoordsY()] == "Rope") {
                     if (inputString.contains("take")){
                         if (inputString.contains("rope")) {
@@ -46,7 +53,7 @@ public class Main {
                         }
                     }
                 }
-            
+                // if the user wants to steak the scroll, key, or necklace
                 else if(inputString.contains("steal")){
                     if (inputString.contains("scroll")){
                         String object = "scroll";
@@ -62,10 +69,11 @@ public class Main {
                     }
                     
                 }
+                // if they want to view inventory
                 else if(inputString.contains("inventory")){
                     User.viewInventory();
                 }
-
+                // if they want to drop any object
                 else if(inputString.contains("drop")){
                     if (inputString.contains("necklace")){
                         String object = "necklace";
@@ -84,13 +92,13 @@ public class Main {
                         User.drop(object);
                     }
                 }
-
+                // for any rage-quitters
                 else if (inputString.contains("exit")) {
                     System.out.println("Exiting game. Goodbye!");
                     gameScanner.close();
                     break; // Exit the loop and end the game
                 }
-
+                // if they land on the knight spot, and if they choose fight or talk
                 else if (midievalRoom[Map.trackCoordsX()][Map.trackCoordsY()] == "Knight") {
                     if (inputString.contains("fight")) {
                         Character.knightFight();
@@ -99,6 +107,7 @@ public class Main {
                         Character.knightTalk();
                     }
                 }
+                // if they land on the knight spot, and if they choose freak out or chat
                 else if (midievalRoom[Map.trackCoordsX()][Map.trackCoordsY()] == "Painting") {
                     if (inputString.contains("freak out")) {
                         Character.paintingFight();
@@ -106,14 +115,17 @@ public class Main {
                     else if (inputString.contains("chat")) {
                         Character.paintingChat();
                     }        
-                } 
+                }
+                // if user needs a little help
                 else if (inputString.contains("help")){
                     System.out.println(User.helpUser());
                 }
+                // anything else...
                 else {
                     System.out.println("invalid input. PLease use a action along with direction or object ");
                 }
             }
+            // if the chanceOfSurvival() returns false and the user dies/gets arrested/etc, game over
         if (Character.knightFight() == false || Character.knightTalk() == false || Character.paintingChat() == false || Character.paintingFight() == false ) {
             gameScanner.close();
         }

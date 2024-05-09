@@ -1,31 +1,28 @@
 
 public class Map {
-
-
     // initializing COORDINATE PLACES in order to move along the map
     private static int playerPosx = 0;
     private static int playerPosy = 0;
     
+    /**
+    * getSpot() checks whether the coordinates are out of bounds
+    * @param place : the room and which map we are checking
+    * @returns boolean 
+    */
     public static boolean getSpot(String[][] place) {
-        /*
-        getSpot() checks whether the coordinates are out of bounds
-        String [][] place : the room and which map we are checking
-        returns :  boolean 
-         */
         if (playerPosx >= 0 & playerPosx < (place.length - 1) || playerPosy >= 0 & playerPosy < (place[0].length - 1)) {
             return true;
-        } 
-        else {
+        } else {
              return false;
-            }
+        }
     }
 
+    /**
+    * playerGo() allows the player to move around the map 
+    * @param direction : checks to see if the input string contains "left", "right", "forward", or "backward"
+    * @param room : checks which room user is in 
+    */
     public static void playerGo(String direction, String[][] room){
-        /*
-         * playerGo() allows the player to move around the map 
-         * String direction : checks to see if the input string contains "left", "right", "forward", or "backward"
-         * String[][] room : checks which room user is in 
-         */
         if(getSpot(room)){
             if(direction.contains("left")){
                 if(playerPosy++ < (room.length -1)){
@@ -33,54 +30,45 @@ public class Map {
                     playerPosy = playerPosy++;
                     // calls on method to give the room a specific coord function
                     checkRoom(playerPosx, playerPosy, room);
-
                 }
-        }
+            }
             else if(direction.contains("right")){
                 if(playerPosy-- > 0){
                     playerPosy = playerPosy--;
                     checkRoom(playerPosx, playerPosy, room);
                 }
-
-        }
+            }
             else if(direction.contains("forward")){
                 if(playerPosx++ < (room.length -1)){
                     playerPosx = playerPosx++; 
                     // System.out.println(" row " + playerPosx + " column " + playerPosy); 
                     checkRoom(playerPosx, playerPosy, room);    
-                }
-                
-        }
+                }  
+            }
             else if(direction.contains("backward")){
                 if(playerPosx-- < 0){
                     playerPosx = playerPosx--;
                     checkRoom(playerPosx, playerPosy, room);
                 }
-                }
-            else{
+            } else{
                 // if input string contains none of the directions
                 System.out.println("Invalid direction. Please try again.");
             }
-        }
-        else{
+        } else{
             // if coords are out of bounds
             System.out.println("You fell off the map! Time to start over:( Your coordinates are back to the start.");
             playerPosx = 0;
             playerPosy = 0;
         }
-        }
+    }
          
-
-
+    /**
+    * checkRoom() directs the game to printed statement based on the keyword of the map from the coordinates
+    * @param x coordinate for which row the player is in
+    * @param y coordinate for which place in the row the player is in
+    * String[][] map midieval map
+    */
     public static void checkRoom(int x, int y, String[][] map) {
-        /*
-        checkRoom() directs the game to printed statement based on the keyword 
-        of the map from the coordinates
-        int x coordinate for which row the player is in
-        int y coordinate for which place in the row the player is in
-        String[][] map midieval map
-         * 
-         */
         switch (map[x][y]) { // using switch case in order to check if the location of the map has any of the following Strings
             case "Empty":
                 System.out.println("This space is empty, keep going!");
@@ -91,7 +79,7 @@ public class Map {
                 playerPosx = 0;
                 playerPosy = 0;
                 break;
-
+                // the entrance/starting point of the game
             case "Door":
                 System.out.println("Looks like you're at a door! If you wish to leave you can type quit, if not you should go another way.");
                 break;
@@ -107,7 +95,7 @@ public class Map {
                 System.out.println("You hear a voice and decide to inspect it.");
                 System.out.println("It starts talking to you! Do you A) freak out, or B) chat with it? Type freak out or chat  into console.");
                 break;
-                // sword lets you know where the sword is
+                // sword space...lets you know you can take it
             case "Sword":
                 System.out.println("There's a sword! Do you want to take the sword? Use the action 'take' along with the object name to grab the object!");
                 break;
@@ -117,24 +105,32 @@ public class Map {
                         System.out.println("You have escaped the museum!!! CONGRATS!!!");
                         System.out.println("You have escaped with" + User.inventory + " as your weapon and" + User.satchel + "in your satchel.");
                     } else {
-                        System.out.println("You need to find the key to escape, you are reset to square one!");
-                        playerPosx = 0;
-                        playerPosy = 0;
+                        System.out.println("You need to find the key to escape!");
                 break;
                     }
                 break;
+                // weapon you can take
             case "Rope":
                 System.out.println("There's a rope! Do you want to take the rope? Use the action 'take' along with the object name to grab the object!");
+                break;
+                // needed to esape!
             case "key":
                 System.out.println("Here is the key! Add this to your satchel by stealing this so you can leave!");
+                break;
         }
     }  
-
-    // these methods track the player's positions 
-    // they  return x and y
+    /**
+     * returns the current x coords of the player
+     * @return player position x
+     */
     public static int trackCoordsX(){
         return playerPosx;
-    }    
+    }
+
+     /**
+     * returns the current y coords of the player
+     * @return player position xy
+     */
     public static int trackCoordsY(){
         return playerPosy;
     }

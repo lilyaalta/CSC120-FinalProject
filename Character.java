@@ -1,12 +1,14 @@
 import java.util.Random;
-import java.util.ArrayList;
 public class Character {
-    
-    
-    ArrayList<String> numberList = new ArrayList<String>();
+    // for the chanceOfSurvival method
     static Random rand = new Random();
 
-
+    /**
+     * This is called if the user choses to fight the knight, and works in tandem with the chanceOfSurvival method to determine the
+     * player's fate.
+     * 
+     * @return boolean, true is the user can continue, false if their game ends
+     */
     public static boolean knightFight() {
         if (User.inventory.contains("rope")) {
             if(chanceOfSurvival(1) == true) {
@@ -35,6 +37,12 @@ public class Character {
         return false;
     }  
 
+    /**
+     * This is called if the user choses to talk to the knight, and works in tandem with the chanceOfSurvival method to determine the
+     * player's fate.
+     * 
+     * @return boolean, true is the user can continue, false if their game ends
+     */
     public static boolean knightTalk () {
         if (chanceOfSurvival(1) == true) {
             if (chanceOfSurvival(3)== true) {
@@ -56,6 +64,12 @@ public class Character {
         }
     }
 
+    /**
+     * This is called if the user choses to fight the painting, and works in tandem with the chanceOfSurvival method to determine the
+     * player's fate.
+     * 
+     * @return boolean, true is the user can continue, false if their game ends
+     */
     public static boolean paintingFight() {
         if (User.inventory.contains("rope")) {
             if(chanceOfSurvival(0) == true) {
@@ -84,6 +98,12 @@ public class Character {
         return true;
     }
 
+    /**
+     * This is called if the user choses to talk to the paintnig, and works in tandem with the chanceOfSurvival method to determine the
+     * player's fate.
+     * 
+     * @return boolean, true is the user can continue, false if their game ends
+     */
     public static boolean paintingChat() {
         if (chanceOfSurvival(3) == true) {
             System.out.println("'Hey! You aren't supposed to be in here right now! Who are you?' Asks the painting. You decide not to question why there is a talking painting and get right into continuing your mission");
@@ -107,10 +127,10 @@ public class Character {
 
 
 
-    /*
+    /**
      * the chance of survival based off a non-changing number input
-     * @param number, the set number that helps determine chances
-     * @return a boolean t/f that shows survival of the user
+     * @param number, the set number that helps determine chance of true/false
+     * @return a boolean that shows survival of the user
      */
     private static boolean chanceOfSurvival (int number) {
         // if input number 3
