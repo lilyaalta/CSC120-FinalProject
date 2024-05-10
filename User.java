@@ -140,10 +140,10 @@ public static void helpUser(){
     System.out.println("- inventory");
     System.out.println("- drop + (necklace, scroll, sword, rope)");
     System.out.println("- exit");
-    System.out.println("- fight");
-    System.out.println("- talk");
-    System.out.println("- freak out");
-    System.out.println("- chat");
+    System.out.println("- fight (applicable to knight only)");
+    System.out.println("- talk (applicable to knight only)");
+    System.out.println("- freak out (applicable to painting only)");
+    System.out.println("- chat (applicable to painting only)");
     System.out.println("- help");
 
 }

@@ -10,10 +10,10 @@ Note:  It's a good idea to also make this list available inside the game, in res
             - inventory
             - drop + (necklace, scroll, sword, rope)
             - exit
-            - fight
-            - talk
-            - freak out
-            - chat
+            - fight (applicable to knight only)
+            - talk (applicable to knight only)
+            - freak out (applicable to painting only)
+            - chat (applicable to painting only)
             - help
 
 
