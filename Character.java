@@ -1,4 +1,9 @@
 import java.util.Random;
+
+/**
+ * Class Character that houses methods that pertain to the characters of the game, and has methods
+ * that reflect the user's choices. It also houses the random method that helps determine the user's fate.
+ */
 public class Character {
     // for the chanceOfSurvival method
     static Random rand = new Random();

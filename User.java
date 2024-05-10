@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * Class User which hold methods of which pertain to the user's experience and interaction
+ */
 public class User {
     // The inventory houses weapons, you can only hold one wespon at a time
     static ArrayList<String> inventory = new ArrayList<String>();

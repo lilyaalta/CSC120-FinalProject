@@ -1,4 +1,7 @@
-
+/**
+ * Class Map that aids in keep track of user location. It also deals with the spaces of the map
+ * and what they can do/ do to the user.
+ */
 public class Map {
     // initializing COORDINATE PLACES in order to move along the map
     private static int playerPosx = 0;

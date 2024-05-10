@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/**
+ * Holds just one main method that holds the map layout, game scanner, else/if statements that evaluate user inputs,
+ * location, and have the ability to close the scanner when the game is done.
+ *  
+ */
 public class Main {
 /**
  * The main method which houses the map and scanner interactions
